@@ -1,0 +1,14 @@
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
+  @include font-size(12);
+
+  @include breakpoint(sm) {
+    position: static;
+    display: flex;
+    justify-content: center;
+    color: black;
+  }
+}

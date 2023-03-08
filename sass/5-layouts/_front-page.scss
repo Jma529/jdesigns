@@ -1,0 +1,302 @@
+.bg-topo {
+  background-image: url("media/images/bg-topo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom;
+  position: absolute;
+	width: 100%;
+  height: 100%;
+
+	@include breakpoint(md) {
+		bottom: -15%;
+	}
+
+  @include breakpoint(sm){
+    display: none;
+  }
+
+}
+
+.relative {
+  position: relative;
+}
+
+.bg-accent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+
+  &.snake {
+    bottom: -30%;
+  }
+
+  &.pea {
+    bottom: -15%;
+  }
+
+  &.stingray {
+    bottom: -20%;
+
+    @include breakpoint(sm) {
+      bottom: -45%;
+    }
+  }
+
+
+
+}
+.front-page {
+
+  @include breakpoint(sm){
+    position: fixed;
+    right: 0;
+    top: 0;
+  }
+}
+.animation-wrap {
+
+  @include breakpoint(sm) {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 200px;
+  }
+
+  video {
+    height: 75%;
+    position: absolute;
+    bottom: 23%;
+    right: 0;
+    max-width: 800px;
+
+    @include breakpoint(sm) {
+      position: static;
+      height: 100%;
+    }
+
+    @include breakpoint(ht) {
+      right: 10%;
+    }
+  }
+}
+// General 
+
+
+#our-story, #our-people, #capabilities, #portfolio, #partners, #contact {
+  width: 50vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  opacity: 1;
+  transform: translateX(100%);
+  transition: transform 1s cubic-bezier(0.55, 0, 0.1, 1);
+  transition-property: transform;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  transition-delay: 0s;
+  overflow: auto;
+
+  @include breakpoint(sm) {
+    width: 100%;
+  }
+&.active {
+  transform: translateX(0%);
+}
+
+  &.black {
+    background-color: $color__backgroud-black;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+}
+
+.content {
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  padding: 0 50px;
+
+  @include breakpoint(lg) {
+    padding: 0 20px;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  h1 {
+    &.bottom-padding {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.close {
+  position: fixed;
+  cursor: pointer;
+  transform: rotate(-90deg);
+  transform-origin: bottom center;
+  top: calc(50% - 15px);
+  left: 0;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 18px;
+  z-index: 3; 
+}
+
+/* Arrow button */
+.button-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.capability {
+    padding-bottom: 30px;
+  }
+
+  a {
+    color: $color__text-main;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color__link-hover;
+    }
+
+    .icon-arrow {
+      padding-left: 20px;
+      width: 50px;
+    }
+  }
+}
+// About section
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  @include breakpoint(xs){
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+    @include breakpoint(xs){
+      width: 100%;
+    }
+
+    h2 {
+      margin: 0;
+    }
+  }
+}
+
+// Team section
+
+
+// Image overlay
+.gallery {
+  position: relative;
+
+  &.project {
+    margin-bottom: 30px;
+  }
+  
+  &:hover
+  .gallery-overlay {
+    opacity: 70%;
+  }
+
+  .profile-image {
+
+    @include breakpoint(sm){
+      height: auto;
+      width: auto;
+    }
+  }
+
+
+  .gallery-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
+  opacity: 0;
+  transition: all .5s ease;
+  }
+}
+
+.profile-content {
+  margin-bottom: 30px; 
+}
+
+/* Partner section */
+
+.partner-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .partner {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 20px;
+    border: 0.1px solid $color__border-abbr;
+    margin-bottom: 20px;
+
+
+    @include breakpoint(md) {
+      width: 48%;
+    }
+
+    @include breakpoint(xs) {
+      width: 100%;
+    }
+
+    a {
+      max-width: 100%;
+      height: auto;
+      flex-grow:1; 
+    }
+
+    p {
+      margin-top: 20px;
+    }
+  }
+}
+
+/* Contact us */
+
+.nf-form-content input[type=button] {
+  background: $color__text-accent !important;
+  color: white !important;
+  width: 100% !important;
+}
+
+.nf-form-fields-required {
+  font-size: 12px;
+}
+
+.social-icon {
+  padding: 5px;
+}

@@ -1,0 +1,15 @@
+body {
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	width: 100%;
+
+	section {
+		position: relative;
+		padding-top: 60px;
+	}
+
+	.site {
+		@include breakpoint(sm) {
+			flex-direction: column;
+		}
+	}
+}

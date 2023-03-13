@@ -2,9 +2,20 @@ body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 	width: 100%;
 
+	.wrapper {
+		max-width: 1415px;
+
+		@include breakpoint(md) {
+			max-width: 1000px;
+		}
+		@include breakpoint(sm) {
+			max-width: 800px;
+		}
+	}
+
 	section {
 		position: relative;
-		padding-top: 60px;
+		padding-top: 80px;
 	}
 
 	.site {

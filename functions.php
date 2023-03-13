@@ -49,7 +49,7 @@ function jdesigns_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'jdesigns' ),
+			'main-menu' => 'Main menu'
 		)
 	);
 
@@ -93,8 +93,8 @@ function jdesigns_setup() {
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 80,
+			'width'       => 80,
 			'flex-width'  => true,
 			'flex-height' => true,
 		)

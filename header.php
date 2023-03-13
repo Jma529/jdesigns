@@ -22,38 +22,55 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
+<div id="page" class="site flex">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'jdesigns' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$jdesigns_description = get_bloginfo( 'description', 'display' );
-			if ( $jdesigns_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $jdesigns_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+	<header class="header">
+    <div class="wrapper header-wrapper">
+          <div class="header-left">
+            <a href="<?php echo get_home_url(); ?>" class="site-logo">
+              <img class="logo" src="<?php echo get_template_directory_uri(); ?>/media/jdesigns-logo-ruby.svg" alt="<?php bloginfo( 'name' ); ?>" />
+            </a>
+          </div>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'jdesigns' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+          <div class="header-right">
+
+            <nav class="desktop-menu">
+              <?php
+                wp_nav_menu( array(
+                  'container'         => false,
+                  'theme_location'    => 'main-menu',
+                  'menu_class'        => 'main-menu',
+                ));
+              ?>
+            </nav>
+
+            <div class="site-tools">
+              <button class="mobile-menu-trigger" title="Mobile Menu">
+                <span class="screen-reader-text">Mobile Menu</span>
+                <div class="inner">
+                  <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </button>
+            </div>
+
+          </div>
+            <div class="mobile-menu">
+              <nav class="mobile-nav" aria-label="Mobile Menu">
+                <?php
+                  wp_nav_menu( array(
+                    'container'         => false,
+                    'theme_location'    => 'main-menu',
+                    'menu_class'        => 'main-menu mobile',
+                  ));
+                ?>
+              </nav>
+            </div>
+  </div>
+</header>
+
+  <div class="page-wrapper">

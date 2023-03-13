@@ -1,154 +1,150 @@
 .header {
 	position: fixed;
-	width: 50vw;
+	width: 100%;
 
 	@include breakpoint(sm){
+		flex-direction: column;
 		position: static;
 		width: 100%;
 	}
 	.header-wrapper {
 		display: flex;
-		flex-direction: column;
-		align-items: center;
-		height: 100vh;
-		padding-top: 50px;
+		align-items: space-between;
+		height: 90px;
+		padding: 40px 30px;
 
 		@include breakpoint(sm) {
-			padding-top: 20px;
+			padding: 20px 30px;
 			position: static;
 			height: auto;
 		}
 
-		.contact {
+		.header-left {
+		display: flex;
+    justify-content: flex-start;
+		flex-grow: 1; 
+		}
+
+		.header-right {
 			display: flex;
-			flex-direction: column;
-			align-items: center;
-			color: $color__text-black;
-			text-align: center;
 		}
-		.contact-info {
-			p {
-				margin-bottom: 5px;
-			}
-		}
-	}
 }
   
-.main-navigation {
-	display: flex;
-	text-align: center;
 
-	.menu-items {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	.site-tools {
+		display: none; 
+
+		@include breakpoint(xs) {
+			display: block;
+		}
 	}
+	.desktop-menu {
+		display: flex;
+    align-items: center;
+ 
+		@include breakpoint(xs) {
+			display: none;
+		}
 
-	ul {
-		display: none;
+	.main-menu {
+		display: flex;
+		align-items: center;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-
-				&:hover > ul,
-				&.focus > ul {
-					display: block;
-					left: auto;
+		li {
+			padding: 20px;
+			a {
+				display: block;
+				text-decoration: none;
 				}
 			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
 		}
 	}
 
-	li {
-		position: relative;
 
-		&:hover > a,
-		&.focus > a {
-			text-decoration: underline;
-		}
-	}
 
-	a {
-		display: block;
-		text-decoration: none;
-	}
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
-.menu-toggle {
+/* Mobile menu. */
+.mobile-menu {
 	display: none;
-}
 
-.main-navigation ul {
-	display: flex;
-	flex-direction: column;
-}
-
-
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-	}
-
-	.nav-links {
+	@include breakpoint(xs) {
 		display: flex;
 	}
+}
+.mobile-menu-trigger {
+	position: relative;
+		width: 44px;
+		height: 44px;
+    padding: 0;
+		margin: 0;
+    border: none;
+    background: none !important;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    
+    @include breakpoint() {
+      margin-left: 5px;
+    }
 
-	.nav-previous {
-		flex: 1 0 50%;
-	}
+		.inner {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			height: 100%;
+		}
 
-	.nav-next {
-		text-align: end;
-		flex: 1 0 50%;
+		.hamburger {
+			width: 24px;
+			height: 16px;
+			transition: 0.3s ease-in-out;
+
+			& > div {
+				display: block;
+				height: 2px;
+				background-color: $color__text-black;
+				border-radius: 10px;
+				margin-bottom: 5px;
+				transition: 0.3s ease-in-out;
+
+				&:nth-child(3) {
+					margin: 0;
+				}
+			}
+		}
+
+		&.open {
+
+			.hamburger {
+
+				& > div {
+
+					&:nth-child(1) {
+						transform: rotate(45deg) translate(5px, 4px);
+          }
+          
+          &:nth-child(2) {
+						opacity: 0;
+					}
+
+					&:nth-child(3) {
+						transform: rotate(-45deg) translate(5.5px, -5px);
+					}
+				}
+			}
+		}
+
+		@include on-state(hover, focus) {
+
+			.hamburger > div {
+				background-color: $color__text-main;
+			}
+		}
 	}
 }
-.vertical-line {
-		width: 1px;
-		height: 30px;
-		background-color: $color__text-accent;
-		margin-bottom: 10px;
-	}
 
 	//=============================================================================================================
 // Contact Info
@@ -168,14 +164,10 @@
 	  margin: 12px 0;
 	  border-radius: 100px;
 
-		&.mobile {
-			display: none;
-
 		@include breakpoint(sm) {
 			display: flex;
 			justify-content: center;
 			margin: 16px 0;
-		}
 		}
 
 		&.desktop {
@@ -184,15 +176,13 @@
 			}
 		}
   
-  
 	  .logo {
 		display: block;
-		width: 300px;
+		width: 80px;
 
 		@include breakpoint(sm) {
-			width: 200px;
+			width: 60px;
 		}
 	  }
   }
-  
-  
+

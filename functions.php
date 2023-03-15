@@ -138,10 +138,16 @@ add_action( 'widgets_init', 'jdesigns_widgets_init' );
  * Enqueue scripts and styles.
  */
 function jdesigns_scripts() {
+
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js', false, null);
+	wp_enqueue_script('jquery');
+	
 	wp_enqueue_style( 'jdesigns-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'jdesigns-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'jdesigns-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'jdesigns-navigation', get_template_directory_uri() . '/js/functions.js', array(jquery), _S_VERSION, true );
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -158,6 +164,10 @@ require get_template_directory() . '/inc/custom-header.php';
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
+
+
+/** Register custom post types */
+// require get_template_directory() . '/cpt/cpt-team.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.

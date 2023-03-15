@@ -67,12 +67,17 @@
 
 /* Mobile menu. */
 .mobile-menu {
-	display: none;
-
-&.open {
-		display: flex;
-	}
+	display: flex;
+	transform: translateX(-30vw);
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #000;
+	width: 30vw;
+	height: 100vh;
+	padding: 20px;
 }
+
 .mobile-menu-trigger {
 	position: relative;
 		width: 44px;

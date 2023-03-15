@@ -426,6 +426,11 @@ body.login .g-recaptcha-wrap {
 body {
   background: #F7F4EB;
   width: 100%;
+  transition: transform 1s;
+}
+body.slide-right {
+  transform: translateX(30vw);
+  overflow: hidden;
 }
 body .wrapper {
   max-width: 1415px;
@@ -739,10 +744,15 @@ input[type=submit]:focus {
   text-decoration: none;
 }
 .header .mobile-menu {
-  display: none;
-}
-.header .mobile-menu.open {
   display: flex;
+  transform: translateX(-30vw);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  width: 30vw;
+  height: 100vh;
+  padding: 20px;
 }
 .header .mobile-menu-trigger {
   position: relative;

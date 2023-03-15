@@ -1,6 +1,12 @@
 body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 	width: 100%;
+	transition: transform 1s;
+
+	&.slide-right {
+		transform: translateX(30vw);
+    overflow: hidden;
+	}
 
 	.wrapper {
 		max-width: 1415px;

@@ -167,7 +167,7 @@ require get_template_directory() . '/inc/template-tags.php';
 
 
 /** Register custom post types */
-// require get_template_directory() . '/cpt/cpt-team.php';
+require get_template_directory() . '/cpt/cpt-projects.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.

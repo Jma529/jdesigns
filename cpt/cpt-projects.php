@@ -1,13 +1,18 @@
 <?php
 
+// Define constants
+define( 'JDESIGNS_PROJECT_CPT_NAME', 'project' );
+define( 'JDESIGNS_PROJECT_SINGLE_NAME', 'Project' );
+define( 'JDESIGNS_PROJECT_PLURAL_NAME', 'Projects' );
+
 // Register Custom Post Type
 function jdesigns_projects_register_cpt() {
 
 	$labels = array(
-		'name'                  => _x( 'Project', 'Post Type General Name', 'text_domain' ),
-		'singular_name'         => _x( 'Project', 'Post Type Singular Name', 'text_domain' ),
-		'menu_name'             => __( 'Projects', 'text_domain' ),
-		'name_admin_bar'        => __( 'Projects', 'text_domain' ),
+		'name'                  => JDESIGNS_PROJECT_PLURAL_NAME,
+		'singular_name'         => JDESIGNS_PROJECT_SINGLE_NAME,
+		'menu_name'             => JDESIGNS_PROJECT_PLURAL_NAME,
+		'name_admin_bar'        => JDESIGNS_PROJECT_SINGLE_NAME,
 		'archives'              => __( 'Project Archives', 'text_domain' ),
 		'attributes'            => __( 'Project Attributes', 'text_domain' ),
 		'parent_item_colon'     => __( 'Parent Project:', 'text_domain' ),
@@ -50,9 +55,8 @@ function jdesigns_projects_register_cpt() {
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => false,
-		'capability_type'       => 'page',
 	);
-	register_post_type( 'Project', $args );
+	register_post_type( JDESIGNS_PROJECT_CPT_NAME, $args );
 
 }
 add_action( 'init', 'jdesigns_projects_register_cpt', 0 );

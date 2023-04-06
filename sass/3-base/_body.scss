@@ -19,14 +19,39 @@ body {
 		}
 	}
 
+	.wrapper-small {
+		display: flex;
+		align-items: space-between;
+		padding: 20px 30px;
+		margin: 0 auto;
+		max-width: 1200px;
+	
+		@include breakpoint(sm) {
+			position: static;
+			height: auto;
+		}
+
+	}
+	
+	.page-wrapper {
+		max-width: 100%;
+		margin: 0 25px;
+	}
+
 	section {
 		position: relative;
-		padding-top: 80px;
+		padding-top: 80px;	
 	}
 
 	.site {
+		top: 180px;
+		
 		@include breakpoint(sm) {
 			flex-direction: column;
 		}
+	}
+	
+	.hidden {
+		visibility: hidden;
 	}
 }

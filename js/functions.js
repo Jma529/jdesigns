@@ -29,4 +29,13 @@ jQuery(document).ready(function () {
   //     closeMobileMenu();
   //   }
   // });
+
+  // Slick Slider, single slide automatic
+
+  $(".front-page-slider").slick({
+    autoplay: true,
+    slidesToScroll: 1,
+    arrows: false,
+    infinite: true,
+  });
 });

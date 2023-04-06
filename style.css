@@ -4,7 +4,7 @@ Theme URI: https://underscores.me/
 Author: Automattic
 Author URI: https://automattic.com/
 Description: Hi. I'm a starter theme called <code></code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 1.0.0
+Version: 1.0.3
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -445,14 +445,37 @@ body .wrapper {
     max-width: 800px;
   }
 }
+body .wrapper-small {
+  display: flex;
+  align-items: space-between;
+  padding: 20px 30px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+@media only screen and (max-width: 768px) {
+  body .wrapper-small {
+    position: static;
+    height: auto;
+  }
+}
+body .page-wrapper {
+  max-width: 100%;
+  margin: 0 25px;
+}
 body section {
   position: relative;
   padding-top: 80px;
+}
+body .site {
+  top: 180px;
 }
 @media only screen and (max-width: 768px) {
   body .site {
     flex-direction: column;
   }
+}
+body .hidden {
+  visibility: hidden;
 }
 
 h1, .h1 {
@@ -617,20 +640,42 @@ input[type=submit]:focus {
 }
 
 .site-footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 20px;
   font-size: 12px;
   font-size: 12rem;
+  background-color: #F7F4EB;
 }
 @media only screen and (max-width: 768px) {
   .site-footer {
     position: static;
     display: flex;
     justify-content: center;
-    color: black;
   }
+}
+.site-footer .footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+.site-footer .site-info {
+  display: none;
+}
+.site-footer .nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.site-footer .nav-menu li {
+  padding: 10px;
+}
+.site-footer .nav-menu li a {
+  display: block;
+  color: #830715;
+  text-decoration: none;
 }
 
 .gallery-item {
@@ -682,6 +727,8 @@ input[type=submit]:focus {
 .header {
   position: fixed;
   width: 100%;
+  z-index: 9999;
+  background-color: #F7F4EB;
   /* Mobile menu. */
 }
 @media only screen and (max-width: 768px) {
@@ -691,24 +738,18 @@ input[type=submit]:focus {
     width: 100%;
   }
 }
-.header .header-wrapper {
-  display: flex;
-  align-items: space-between;
-  padding: 40px 30px;
-}
-@media only screen and (max-width: 768px) {
-  .header .header-wrapper {
-    padding: 20px 30px;
-    position: static;
-    height: auto;
-  }
-}
-.header .header-wrapper .header-left {
+.header .header-left {
   display: flex;
   justify-content: flex-start;
   flex-grow: 1;
 }
-.header .header-wrapper .header-right {
+.header .header-left a {
+  text-transform: uppercase;
+  color: #830715;
+  text-decoration: none;
+  font-size: 24px;
+}
+.header .header-right {
   display: flex;
 }
 .header .site-tools {
@@ -719,26 +760,26 @@ input[type=submit]:focus {
     display: block;
   }
 }
-.header .desktop-menu {
+.header .header-menu {
   display: flex;
   align-items: center;
 }
 @media only screen and (max-width: 576px) {
-  .header .desktop-menu {
+  .header .header-menu {
     display: none;
   }
 }
-.header .desktop-menu .main-menu {
+.header .nav-menu {
   display: flex;
   align-items: center;
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
-.header .desktop-menu .main-menu li {
-  padding: 20px;
+.header .nav-menu li {
+  padding: 10px;
 }
-.header .desktop-menu .main-menu li a {
+.header .nav-menu li a {
   display: block;
   color: #830715;
   text-decoration: none;
@@ -1062,49 +1103,18 @@ table {
   margin: 0 0 1.5em;
 }
 
-.bg-topo {
-  background-image: url("media/images/bg-topo.png");
+.section-image-cover {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  padding: 0;
+  background-position: center center;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: bottom;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-@media only screen and (max-width: 992px) {
-  .bg-topo {
-    bottom: -15%;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .bg-topo {
-    display: none;
-  }
 }
 
 .relative {
   position: relative;
-}
-
-.bg-accent {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  padding: 20px;
-}
-.bg-accent.snake {
-  bottom: -30%;
-}
-.bg-accent.pea {
-  bottom: -15%;
-}
-.bg-accent.stingray {
-  bottom: -20%;
-}
-@media only screen and (max-width: 768px) {
-  .bg-accent.stingray {
-    bottom: -45%;
-  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1112,33 +1122,6 @@ table {
     position: fixed;
     right: 0;
     top: 0;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .animation-wrap {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    height: 200px;
-  }
-}
-.animation-wrap video {
-  height: 75%;
-  position: absolute;
-  bottom: 23%;
-  right: 0;
-  max-width: 800px;
-}
-@media only screen and (max-width: 768px) {
-  .animation-wrap video {
-    position: static;
-    height: 100%;
-  }
-}
-@media only screen and (max-height: 815px) {
-  .animation-wrap video {
-    right: 10%;
   }
 }
 
@@ -1332,6 +1315,23 @@ table {
 
 .social-icon {
   padding: 5px;
+}
+
+.project-image {
+  position: relative;
+  height: 500px;
+  min-height: 400px;
+  padding: 0;
+  background-position: center center;
+  background-size: full;
+  background-repeat: no-repeat;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 400px;
+  grid-gap: 20px;
 }
 
 /*--------------------------------------------------------------

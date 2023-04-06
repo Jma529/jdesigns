@@ -16,31 +16,33 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 	<?php wp_head(); ?>
 </head>
 
+
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site flex">
+<div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'jdesigns' ); ?></a>
 
 	<header class="header">
-    <div class="wrapper header-wrapper">
+    <div class="wrapper-small">
           <div class="header-left">
             <a href="<?php echo get_home_url(); ?>" class="site-logo">
-              <img class="logo" src="<?php echo get_template_directory_uri(); ?>/media/jdesigns-logo-ruby.svg" alt="<?php bloginfo( 'name' ); ?>" />
+            J Designs
             </a>
           </div>
 
           <div class="header-right">
 
-            <nav class="desktop-menu">
+            <nav class="header-menu">
               <?php
                 wp_nav_menu( array(
                   'container'         => false,
                   'theme_location'    => 'main-menu',
-                  'menu_class'        => 'main-menu',
+                  'menu_class'        => 'nav-menu',
                 ));
               ?>
             </nav>

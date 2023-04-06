@@ -1,0 +1,16 @@
+.project-image {
+  position: relative;
+  height: 500px;
+  min-height: 400px;
+  padding: 0;
+  background-position: center center;
+  background-size: full;
+  background-repeat: no-repeat;
+}
+
+.project-grid {
+	display: grid;
+	grid-template-columns: 2fr 2fr 2fr;
+	grid-template-rows: 400px;
+	grid-gap: 20px;
+}

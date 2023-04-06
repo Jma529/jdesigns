@@ -7,9 +7,11 @@
  * @package jdesigns
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+if ( ! defined( 'THEME_VERSION' ) ) {
+
+	$theme = wp_get_theme();
+	/**gets version written in theme's style.css */
+	define('THEME_VERSION', $theme->Version); 
 }
 
 /**
@@ -49,7 +51,8 @@ function jdesigns_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'main-menu' => 'Main menu'
+			'main-menu' => 'Main menu',
+			'footer' => 'Footer menu',
 		)
 	);
 
@@ -142,17 +145,25 @@ function jdesigns_scripts() {
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js', false, null);
 	wp_enqueue_script('jquery');
+
+	wp_register_script('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.0.0'); 
+	wp_enqueue_script('slick'); 
 	
-	wp_enqueue_style( 'jdesigns-style', get_stylesheet_uri(), array(), _S_VERSION );
+	
+	wp_enqueue_style( 'jdesigns-style', get_stylesheet_uri(), array(), THEME_VERSION, 'all' );
 	wp_style_add_data( 'jdesigns-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'jdesigns-navigation', get_template_directory_uri() . '/js/functions.js', array(jquery), _S_VERSION, true );
+	wp_enqueue_script( 'jdesigns-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), THEME_VERSION, true );
+	wp_enqueue_script( 'jdesigns-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), THEME_VERSION, true );
+
+
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'jdesigns_scripts' );
 
 /**

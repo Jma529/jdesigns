@@ -654,7 +654,7 @@ input[type=submit]:focus {
 .site-footer .footer-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
+  justify-items: flex-start;
   align-items: center;
   width: 100%;
   height: auto;
@@ -742,6 +742,7 @@ input[type=submit]:focus {
   display: flex;
   justify-content: flex-start;
   flex-grow: 1;
+  padding-left: 10px;
 }
 .header .header-left a {
   text-transform: uppercase;

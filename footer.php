@@ -46,6 +46,10 @@
 				</a>
 				</div>
 				<div class="form footer-col">
+					<h3 class="h2">Connect</h3>
+					<p>Sign up for our newsletter</p>
+					<?php get_template_part('template-parts/mailchimp-form'); ?>
+				</div>
 
 				</div>
 			</div>

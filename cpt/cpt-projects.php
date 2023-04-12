@@ -54,7 +54,8 @@ function jdesigns_projects_register_cpt() {
 		'can_export'            => true,
 		'has_archive'           => true,
 		'exclude_from_search'   => true,
-		'publicly_queryable'    => false,
+		'publicly_queryable'    => true,
+		'with_front' 						=> true,
 	);
 	register_post_type( JDESIGNS_PROJECT_CPT_NAME, $args );
 

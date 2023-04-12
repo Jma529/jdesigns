@@ -18,18 +18,22 @@
       <?php while( $project -> have_posts() ) : $project -> the_post(); 
       
         $image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+        $link = get_permalink();
         // $position = get_field('title');
         // $description = get_field('description');
         
         ?>
-        
+        <a href="<?php echo $link; ?>"><?php echo $link?>
         <article class="grid-item">
           <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
           <div class="hover-content">
+    
+
             <h3 class="name"><?php the_title(); ?></h3>
             <button>View Project<span>-></span></button>
           </div>
         </article>
+      </a>
 
       <?php endwhile; wp_reset_postdata(); ?>
     </div>

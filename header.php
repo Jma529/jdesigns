@@ -26,53 +26,54 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'jdesigns' ); ?></a>
-
-	<header class="header">
-    <div class="wrapper-small">
-          <div class="header-left">
-            <a href="<?php echo get_home_url(); ?>" class="site-logo">
-            J Designs
-            </a>
-          </div>
-
-          <div class="header-right">
-
-            <nav class="header-menu">
-              <?php
-                wp_nav_menu( array(
-                  'container'         => false,
-                  'theme_location'    => 'main-menu',
-                  'menu_class'        => 'nav-menu',
-                ));
-              ?>
-            </nav>
-
-            <div class="site-tools">
-              <button class="mobile-menu-trigger" title="Mobile Menu">
-                <span class="screen-reader-text">Mobile Menu</span>
-                <div class="inner">
-                  <div class="hamburger">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                </div>
-              </button>
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="wrapper-small">
+            <div class="header-left">
+              <a href="<?php echo get_home_url(); ?>" class="site-logo-text">
+              J Designs
+              </a>
             </div>
 
-          </div>
-            <div class="mobile-menu">
-              <nav class="mobile-nav" aria-label="Mobile Menu">
+            <div class="header-right">
+
+              <nav class="header-menu">
                 <?php
                   wp_nav_menu( array(
                     'container'         => false,
                     'theme_location'    => 'main-menu',
-                    'menu_class'        => 'main-menu mobile',
+                    'menu_class'        => 'nav-menu',
                   ));
                 ?>
               </nav>
-            </div>
-  </div>
-</header>
 
-  <div class="page-wrapper">
+              <div class="site-tools">
+                <!-- <button class="mobile-menu-trigger" title="Mobile Menu">
+                  <span class="screen-reader-text">Mobile Menu</span> -->
+                    <input id="hamburger" class="hamburger" type="checkbox"/>
+                      <label class="hamburger" for="hamburger">
+                      <i></i>
+                      <text>
+                        <close>close</close>
+                        <open>menu</open>
+                      </text>
+                  </label>
+                  <nav class="mobile-nav" aria-label="Mobile Menu">
+                  <?php
+                    wp_nav_menu( array(
+                      'container'         => false,
+                      'theme_location'    => 'main-menu',
+                      'menu_class'        => 'main-menu-mobile',
+                    ));
+                  ?>
+                </nav>
+                <!-- </button> -->
+              </div>
+      
+
+            </div>
+            
+    </div>
+  </header>
+
+ 

@@ -44,7 +44,7 @@ body {
 	}
 
 	.site {
-		top: 180px;
+		position: relative;
 		
 		@include breakpoint(sm) {
 			flex-direction: column;

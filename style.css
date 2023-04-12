@@ -467,7 +467,7 @@ body section {
   padding-top: 80px;
 }
 body .site {
-  top: 180px;
+  position: relative;
 }
 @media only screen and (max-width: 768px) {
   body .site {
@@ -755,7 +755,7 @@ input[type=submit]:focus {
 .header .site-tools {
   display: none;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .header .site-tools {
     display: block;
   }
@@ -764,7 +764,7 @@ input[type=submit]:focus {
   display: flex;
   align-items: center;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .header .header-menu {
     display: none;
   }
@@ -784,68 +784,59 @@ input[type=submit]:focus {
   color: #830715;
   text-decoration: none;
 }
-.header .mobile-menu {
-  display: flex;
-  transform: translateX(-30vw);
+.header .mobile-nav {
   position: fixed;
+  right: 0;
   top: 0;
-  left: 0;
-  background: #000;
-  width: 30vw;
   height: 100vh;
-  padding: 20px;
+  width: 100vw;
+  transform: translate(100vw, 0);
+  /* ie workaround */
+  -ms-transform: translatex(-100vw);
+  box-sizing: border-box;
+  pointer-events: none;
+  padding-top: 125px;
+  transition: width 475ms ease-out, transform 450ms ease, border-radius 0.8s 0.1s ease;
+  background-color: #F7F4EB;
+  opacity: 0.8;
+  z-index: 9999;
 }
-.header .mobile-menu-trigger {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background: none !important;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-@media all {
-  .header .mobile-menu-trigger {
-    margin-left: 5px;
-  }
-}
-.header .mobile-menu-trigger .inner {
+.header .mobile-nav ul {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
+  justify-content: center;
   height: 100%;
-}
-.header .mobile-menu-trigger .hamburger {
-  width: 24px;
-  height: 16px;
-  transition: 0.3s ease-in-out;
-}
-.header .mobile-menu-trigger .hamburger > div {
-  display: block;
-  height: 2px;
-  background-color: #000000;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  transition: 0.3s ease-in-out;
-}
-.header .mobile-menu-trigger .hamburger > div:nth-child(3) {
+  width: 100%;
   margin: 0;
+  padding: 0;
+  overflow: auto;
+  overflow-x: hidden;
+  pointer-events: auto;
 }
-.header .mobile-menu-trigger.open .hamburger > div:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 4px);
+.header .mobile-nav li {
+  list-style: none;
+  text-transform: uppercase;
+  pointer-events: auto;
+  white-space: nowrap;
+  box-sizing: border-box;
+  transform: translatex(100vw);
+  /* ie workaround */
+  -ms-transform: translatex(-100vw);
 }
-.header .mobile-menu-trigger.open .hamburger > div:nth-child(2) {
-  opacity: 0;
+.header .mobile-nav li:last-child {
+  margin-bottom: 2em;
 }
-.header .mobile-menu-trigger.open .hamburger > div:nth-child(3) {
-  transform: rotate(-45deg) translate(5.5px, -5px);
+.header .mobile-nav li a {
+  text-decoration: none;
+  color: #830715;
+  text-align: center;
+  display: block;
+  padding: 25px;
+  font-size: 24px;
 }
-html:not([data-whatintent=touch]) .header .mobile-menu-trigger:hover .hamburger > div, html:not([data-whatintent=touch]) .header .mobile-menu-trigger:focus .hamburger > div {
-  background-color: #830715;
+.header .mobile-nav li a:hover {
+  cursor: pointer;
 }
 
 .social-icons {
@@ -856,6 +847,9 @@ html:not([data-whatintent=touch]) .header .mobile-menu-trigger:hover .hamburger 
 }
 
 .site-logo {
+  display: flex;
+  justify-content: center;
+  width: 100%;
   margin: 12px 0;
   border-radius: 100px;
 }
@@ -879,6 +873,252 @@ html:not([data-whatintent=touch]) .header .mobile-menu-trigger:hover .hamburger 
   .site-logo .logo {
     width: 60px;
   }
+}
+
+input.hamburger {
+  display: none;
+}
+input.hamburger:checked ~ .mobile-nav {
+  transform: translatex(0);
+  border-bottom-left-radius: 0;
+}
+input.hamburger:checked ~ .mobile-nav li {
+  transform: translatex(0);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(1) {
+  transition: transform 1s 0.08s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(2) {
+  transition: transform 1s 0.16s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(3) {
+  transition: transform 1s 0.24s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(4) {
+  transition: transform 1s 0.32s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(5) {
+  transition: transform 1s 0.4s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(6) {
+  transition: transform 1s 0.48s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(7) {
+  transition: transform 1s 0.56s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(8) {
+  transition: transform 1s 0.64s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(9) {
+  transition: transform 1s 0.72s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(10) {
+  transition: transform 1s 0.8s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(11) {
+  transition: transform 1s 0.88s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(12) {
+  transition: transform 1s 0.96s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(13) {
+  transition: transform 1s 1.04s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(14) {
+  transition: transform 1s 1.12s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(15) {
+  transition: transform 1s 1.2s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(16) {
+  transition: transform 1s 1.28s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(17) {
+  transition: transform 1s 1.36s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(18) {
+  transition: transform 1s 1.44s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(19) {
+  transition: transform 1s 1.52s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(20) {
+  transition: transform 1s 1.6s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(21) {
+  transition: transform 1s 1.68s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(22) {
+  transition: transform 1s 1.76s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(23) {
+  transition: transform 1s 1.84s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(24) {
+  transition: transform 1s 1.92s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(25) {
+  transition: transform 1s 2s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(26) {
+  transition: transform 1s 2.08s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(27) {
+  transition: transform 1s 2.16s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(28) {
+  transition: transform 1s 2.24s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(29) {
+  transition: transform 1s 2.32s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(30) {
+  transition: transform 1s 2.4s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(31) {
+  transition: transform 1s 2.48s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(32) {
+  transition: transform 1s 2.56s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(33) {
+  transition: transform 1s 2.64s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(34) {
+  transition: transform 1s 2.72s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(35) {
+  transition: transform 1s 2.8s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(36) {
+  transition: transform 1s 2.88s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(37) {
+  transition: transform 1s 2.96s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(38) {
+  transition: transform 1s 3.04s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(39) {
+  transition: transform 1s 3.12s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(40) {
+  transition: transform 1s 3.2s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(41) {
+  transition: transform 1s 3.28s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(42) {
+  transition: transform 1s 3.36s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(43) {
+  transition: transform 1s 3.44s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(44) {
+  transition: transform 1s 3.52s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(45) {
+  transition: transform 1s 3.6s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(46) {
+  transition: transform 1s 3.68s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(47) {
+  transition: transform 1s 3.76s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(48) {
+  transition: transform 1s 3.84s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(49) {
+  transition: transform 1s 3.92s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li:nth-child(50) {
+  transition: transform 1s 4s cubic-bezier(0.29, 1.4, 0.44, 0.96);
+}
+input.hamburger:checked ~ .mobile-nav li a {
+  padding-right: 15px;
+}
+input.hamburger:checked ~ label > i {
+  background-color: transparent;
+  transform: rotate(90deg);
+}
+input.hamburger:checked ~ label > i:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+input.hamburger:checked ~ label > i:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+input.hamburger:checked ~ label close {
+  color: #830715;
+  width: 100%;
+}
+input.hamburger:checked ~ label open {
+  color: rgba(0, 0, 0, 0);
+  width: 0;
+}
+
+label.hamburger {
+  z-index: 9999;
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+}
+label.hamburger:hover {
+  cursor: pointer;
+}
+label.hamburger text close,
+label.hamburger text open {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  text-align: center;
+  position: absolute;
+  transform: translateY(50px);
+  text-align: center;
+  overflow: hidden;
+  transition: width 0.25s 0.35s, color 0.45s 0.35s;
+}
+label.hamburger text close {
+  color: rgba(0, 0, 0, 0);
+  right: 0;
+  width: 0;
+}
+label.hamburger text open {
+  color: #830715;
+  width: 100%;
+}
+label.hamburger > i {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 50%;
+  background-color: #830715;
+  pointer-events: auto;
+  transition-duration: 0.35s;
+  transition-delay: 0.35s;
+}
+label.hamburger > i:before, label.hamburger > i:after {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  left: 50%;
+  background-color: #830715;
+  content: "";
+  transition: transform 0.35s;
+  transform-origin: 50% 50%;
+}
+label.hamburger > i:before {
+  transform: translate(-50%, -14px);
+}
+label.hamburger > i:after {
+  transform: translate(-50%, 14px);
+}
+
+label.hamburger {
+  position: fixed;
+  top: 15px;
+  right: 15px;
 }
 
 hr {
@@ -1332,6 +1572,29 @@ table {
   grid-template-columns: 2fr 2fr 2fr;
   grid-template-rows: 400px;
   grid-gap: 20px;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item {
+  Float: left;
+  Width: 140px;
+  Border: 1px solid #DDD;
+}
+
+.size-2 {
+  width: 180px;
+}
+
+.size-3 {
+  width: 220px;
+}
+
+.size-4 {
+  width: 90px;
 }
 
 /*--------------------------------------------------------------

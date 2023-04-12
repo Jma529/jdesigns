@@ -27,7 +27,7 @@
 						printf( esc_html__( 'Theme: %1$s by %2$s.', 'jdesigns' ), 'jdesigns', '<a href="http://underscores.me/">Jill Augustus</a>' );
 						?>
 				</div><!-- .site-info -->
-				<nav class="footer-menu col">
+				<nav class="footer-menu footer-col">
 					<ul class="nav-menu">
 						<li>
 							<a href="#">Instagram</a>
@@ -40,12 +40,12 @@
 						</li>
 					</ul>
 				</nav>
-				<div class="site-logo col">
+				<div class="site-logo footer-col">
 				<a href="<?php echo get_home_url(); ?>" class="site-logo">
 					<img class="logo" src="<?php echo get_template_directory_uri(); ?>/media/jdesigns-logo-ruby.svg" alt="<?php bloginfo( 'name' ); ?>" />
 				</a>
 				</div>
-				<div class="form col">
+				<div class="form footer-col">
 
 				</div>
 			</div>
@@ -53,7 +53,7 @@
 						
 
 	</footer><!-- #colophon -->
-</div><!-- #page -->
+</div><!-- #page wrapper -->
 
 <?php wp_footer(); ?>
 

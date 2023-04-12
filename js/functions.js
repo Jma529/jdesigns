@@ -1,11 +1,12 @@
 jQuery(document).ready(function () {
-  var mobile_menu_trigger = ".mobile-menu-trigger";
-  mobile_menu = ".mobile-menu";
+  var mobile_menu_trigger = ".hamburger";
+  var mobile_menu = ".mobile-menu";
 
   // Callback function to OPEN the mobile menu
 
   $(mobile_menu_trigger).click(function () {
-    $("body").toggleClass("slide-right");
+    $(mobile_menu).toggleClass("slide-right");
+    console.log("I am checked!");
   });
   // function openMobileMenu() {
   //   $(mobile_menu_trigger).click(function () {

@@ -10,27 +10,24 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site">
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
+		
+		while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			if( JDESIGNS_PROJECT_CPT_NAME === get_post_type() ) : 
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'jdesigns' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'jdesigns' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
+				get_template_part('templates/single/project');
+			
+			else : ?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+					<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 
-		endwhile; // End of the loop.
+			<?php endif;
+
+		endwhile;
+		
 		?>
 
 	</main><!-- #main -->

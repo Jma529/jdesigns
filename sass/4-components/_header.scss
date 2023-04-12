@@ -30,7 +30,7 @@
 	.site-tools {
 		display: none; 
 
-		@include breakpoint(xs) {
+		@include breakpoint(sm) {
 			display: block;
 		}
 	}
@@ -38,7 +38,7 @@
 		display: flex;
     align-items: center;
  
-		@include breakpoint(xs) {
+		@include breakpoint(sm) {
 			display: none;
 		}
 		}
@@ -62,90 +62,138 @@
 
 
 /* Mobile menu. */
-.mobile-menu {
-	display: flex;
-	transform: translateX(-30vw);
-	position: fixed;
-	top: 0;
-	left: 0;
-	background: #000;
-	width: 30vw;
-	height: 100vh;
-	padding: 20px;
-}
 
-.mobile-menu-trigger {
-	position: relative;
-		width: 44px;
-		height: 44px;
+.mobile-nav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  transform: translate(100vw, 0);
+  /* ie workaround */
+  -ms-transform: translatex(-100vw);
+  box-sizing: border-box;
+  pointer-events: none;
+  padding-top: 125px;
+  transition: width 475ms ease-out, transform 450ms ease, border-radius .8s .1s ease;
+	background-color: $color__background-body;
+	opacity: .8;
+	z-index: 9999;
+
+  ul {
+		display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
     padding: 0;
-		margin: 0;
-    border: none;
-    background: none !important;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    
-    @include breakpoint() {
-      margin-left: 5px;
+    overflow: auto;
+    overflow-x: hidden;
+    pointer-events: auto;
+  }
+  li {
+    list-style: none;
+    text-transform: uppercase;
+    pointer-events: auto;
+    white-space: nowrap;
+    box-sizing: border-box;
+    transform: translatex(100vw);
+    /* ie workaround */
+    -ms-transform: translatex(-100vw);
+    &:last-child {
+      margin-bottom: 2em;
     }
-
-		.inner {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 100%;
-			height: 100%;
-		}
-
-		.hamburger {
-			width: 24px;
-			height: 16px;
-			transition: 0.3s ease-in-out;
-
-			& > div {
-				display: block;
-				height: 2px;
-				background-color: $color__text-black;
-				border-radius: 10px;
-				margin-bottom: 5px;
-				transition: 0.3s ease-in-out;
-
-				&:nth-child(3) {
-					margin: 0;
-				}
-			}
-		}
-
-		&.open {
-
-			.hamburger {
-
-				& > div {
-
-					&:nth-child(1) {
-						transform: rotate(45deg) translate(5px, 4px);
-          }
-          
-          &:nth-child(2) {
-						opacity: 0;
-					}
-
-					&:nth-child(3) {
-						transform: rotate(-45deg) translate(5.5px, -5px);
-					}
-				}
-			}
-		}
-
-		@include on-state(hover, focus) {
-
-			.hamburger > div {
-				background-color: $color__text-main;
-			}
-		}
-	}
+    a {
+      text-decoration: none;
+      color: $color__text-main;
+      text-align: center;
+      display: block;
+      padding: 25px;
+      font-size: 24px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }
+
+}
+
+
+// .mobile-menu-trigger {
+// 	position: relative;
+// 		width: 44px;
+// 		height: 44px;
+//     padding: 0;
+// 		margin: 0;
+//     border: none;
+//     background: none !important;
+//     overflow: hidden;
+//     transition: all 0.3s ease-in-out;
+//     cursor: pointer;
+    
+//     @include breakpoint() {
+//       margin-left: 5px;
+//     }
+
+// 		.inner {
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;
+// 			width: 100%;
+// 			height: 100%;
+// 		}
+
+// 		.hamburger {
+// 			width: 24px;
+// 			height: 16px;
+// 			transition: 0.3s ease-in-out;
+
+// 			& > div {
+// 				display: block;
+// 				height: 2px;
+// 				background-color: $color__text-black;
+// 				border-radius: 10px;
+// 				margin-bottom: 5px;
+// 				transition: 0.3s ease-in-out;
+
+// 				&:nth-child(3) {
+// 					margin: 0;
+// 				}
+// 			}
+// 		}
+
+// 		&.open {
+
+// 			.hamburger {
+
+// 				& > div {
+
+// 					&:nth-child(1) {
+// 						transform: rotate(45deg) translate(5px, 4px);
+//           }
+          
+//           &:nth-child(2) {
+// 						opacity: 0;
+// 					}
+
+// 					&:nth-child(3) {
+// 						transform: rotate(-45deg) translate(5.5px, -5px);
+// 					}
+// 				}
+// 			}
+// 		}
+
+// 		@include on-state(hover, focus) {
+
+// 			.hamburger > div {
+// 				background-color: $color__text-main;
+// 			}
+// 		}
+// 	}
+
 
 
 
@@ -165,6 +213,9 @@
 //=============================================================================================================
 
 	.site-logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 	  margin: 12px 0;
 	  border-radius: 100px;
 
@@ -190,3 +241,108 @@
 	  }
   }
 
+// Hamburger style/animation adopted from Álvaro on Codepen
+
+input.hamburger {
+  display: none;
+  &:checked {
+    & ~ .mobile-nav {
+       transform: translatex(0);
+        border-bottom-left-radius: 0;
+        li {
+          transform: translatex(0);
+          @include transition;
+          a {
+            padding-right: 15px;
+          }
+        }
+    }
+    & ~ label {
+      > i {
+        background-color: transparent;
+        transform: rotate(90deg);
+        &:before {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &:after {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+      close {
+        color: $color__text-main;
+        width: 100%;
+      }
+      open {
+        color: rgba(0, 0, 0, 0);
+        width: 0;
+      }
+    }
+  }
+}
+
+label.hamburger {
+  z-index: 9999;
+  position: relative;
+  display: block;
+  height: 50px;
+  width: 50px;
+  &:hover {
+    cursor: pointer;
+  }
+  text {
+    close,
+    open {
+      text-transform: uppercase;
+      font-size: .8em;
+      text-align: center;
+      position: absolute;
+      transform: translateY(50px);
+      text-align: center;
+      overflow: hidden;
+      transition: width .25s .35s, color .45s .35s;
+    }
+    close {
+      color: rgba(0, 0, 0, 0);
+      right: 0;
+      width: 0;
+    }
+    open {
+      color: $color__text-main;
+      width: 100%;
+    }
+  }
+  > i {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    background-color: $color__text-main;
+    pointer-events: auto;
+    transition-duration: .35s;
+    transition-delay: .35s;
+    &:before,
+    &:after {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      left: 50%;
+      background-color: $color__text-main;
+      content: "";
+      transition: transform 0.35s;
+      transform-origin: 50% 50%;
+    }
+    &:before {
+      transform: translate(-50%, -14px);
+    }
+    &:after {
+      transform: translate(-50%, 14px);
+    }
+  }
+}
+
+label.hamburger {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+}

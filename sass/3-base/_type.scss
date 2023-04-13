@@ -118,7 +118,7 @@ ins {
 }
 
 .ruby {
-  color: $color__text-main;
+  color: #830715;
 }
 
 nav {
@@ -126,5 +126,10 @@ nav {
   font-family: $font__nav;
   text-transform: uppercase;
   }
-  
+}
+
+.link-style {
+  font-family: $font__nav;
+  text-transform: uppercase;
+  padding: 10px;
 }

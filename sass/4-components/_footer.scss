@@ -8,13 +8,25 @@
     justify-content: center;
   }
 
-	.footer-content {	
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		justify-items: flex-start;
-		align-items: center;
-		width: 100%;
-		height: auto;
+	.footer-content {
+			width: 100%;
+
+		.footer-top {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			justify-items: flex-start;
+			align-items: center;
+			width: 100%;
+			height: auto
+		}	
+
+		.footer-bottom {
+			display: flex;
+
+			.footer-menu {
+				flex-grow: 1;
+			}
+		}
 	}
 
   .site-info {
@@ -30,6 +42,7 @@
 
 		li {
 			padding: 10px;
+
 			a {
 				display: block;
 				color: $color__text-main;
@@ -37,6 +50,12 @@
 				}
 			}
 
+	}
+
+	.form {
+		display: flex;
+    justify-content: flex-end;
+    width: 100%;
 	}
 
 }

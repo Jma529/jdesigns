@@ -544,7 +544,7 @@ optgroup,
 textarea {
   font-size: 16px;
   font-size: 16rem;
-  color: #830715;
+  color: #222324;
   font-family: "Bodoni 72", Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
@@ -610,6 +610,12 @@ nav a {
   text-transform: uppercase;
 }
 
+.link-style {
+  font-family: "Bodoni 72";
+  text-transform: uppercase;
+  padding: 10px;
+}
+
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
@@ -617,11 +623,12 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit] {
-  background: none;
+  background: #000000;
   border: none;
-  color: #830715;
+  color: #F7F4EB;
   line-height: 1;
   padding: 0.6em 1em 0.4em;
+  margin: 0 20px;
 }
 button:hover,
 input[type=button]:hover,
@@ -652,12 +659,21 @@ input[type=submit]:focus {
   }
 }
 .site-footer .footer-content {
+  width: 100%;
+}
+.site-footer .footer-content .footer-top {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: flex-start;
   align-items: center;
   width: 100%;
   height: auto;
+}
+.site-footer .footer-content .footer-bottom {
+  display: flex;
+}
+.site-footer .footer-content .footer-bottom .footer-menu {
+  flex-grow: 1;
 }
 .site-footer .site-info {
   display: none;
@@ -674,8 +690,17 @@ input[type=submit]:focus {
 }
 .site-footer .nav-menu li a {
   display: block;
-  color: #830715;
+  color: #222324;
   text-decoration: none;
+}
+.site-footer .form {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+#mc_embed_signup_scroll {
+  display: flex;
 }
 
 .gallery-item {
@@ -830,7 +855,7 @@ input[type=submit]:focus {
 }
 .header .mobile-nav li a {
   text-decoration: none;
-  color: #830715;
+  color: #222324;
   text-align: center;
   display: block;
   padding: 25px;
@@ -1050,7 +1075,7 @@ input.hamburger:checked ~ label > i:after {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 input.hamburger:checked ~ label close {
-  color: #830715;
+  color: #222324;
   width: 100%;
 }
 input.hamburger:checked ~ label open {
@@ -1085,7 +1110,7 @@ label.hamburger text close {
   width: 0;
 }
 label.hamburger text open {
-  color: #830715;
+  color: #222324;
   width: 100%;
 }
 label.hamburger > i {
@@ -1093,7 +1118,7 @@ label.hamburger > i {
   width: 100%;
   height: 2px;
   top: 50%;
-  background-color: #830715;
+  background-color: #222324;
   pointer-events: auto;
   transition-duration: 0.35s;
   transition-delay: 0.35s;
@@ -1104,7 +1129,7 @@ label.hamburger > i:before, label.hamburger > i:after {
   width: 100%;
   height: 2px;
   left: 50%;
-  background-color: #830715;
+  background-color: #222324;
   content: "";
   transition: transform 0.35s;
   transform-origin: 50% 50%;
@@ -1346,12 +1371,12 @@ table {
 
 .section-image-cover {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: 60vh;
   padding: 0;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  bottom: 200px;
 }
 
 .relative {
@@ -1439,7 +1464,7 @@ table {
   padding-bottom: 30px;
 }
 .button-arrow a {
-  color: #830715;
+  color: #222324;
   text-decoration: none;
   text-transform: uppercase;
 }

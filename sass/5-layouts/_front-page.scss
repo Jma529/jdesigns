@@ -1,11 +1,11 @@
 .section-image-cover {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: 60vh;
   padding: 0;
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  bottom: 200px;
 }
 
 .relative {

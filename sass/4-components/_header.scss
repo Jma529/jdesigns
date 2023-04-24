@@ -14,13 +14,13 @@
 		display: flex;
 		justify-content: flex-start;
 		flex-grow: 1;
-    padding-left: 10px;
+    padding-left: 1rem;
 		
 		a {
 			text-transform: uppercase;
 			color: $color__nav;
 			text-decoration: none;
-			font-size: 24px;
+			@include font-size(2.4rem);
 		}
 	}
 	
@@ -52,6 +52,10 @@
 
 		li {
 			padding: 10px;
+
+      &:nth-child(1) {
+        padding: 10px 10px 10px 0;
+      }
 			a {
 				display: block;
 				color: $color__nav;
@@ -112,92 +116,14 @@
       text-align: center;
       display: block;
       padding: 25px;
-      font-size: 24px;
+      @include font-size(2.4rem);
       &:hover {
         cursor: pointer;
       }
     }
   }
 }
-
 }
-
-
-// .mobile-menu-trigger {
-// 	position: relative;
-// 		width: 44px;
-// 		height: 44px;
-//     padding: 0;
-// 		margin: 0;
-//     border: none;
-//     background: none !important;
-//     overflow: hidden;
-//     transition: all 0.3s ease-in-out;
-//     cursor: pointer;
-    
-//     @include breakpoint() {
-//       margin-left: 5px;
-//     }
-
-// 		.inner {
-// 			display: flex;
-// 			justify-content: center;
-// 			align-items: center;
-// 			width: 100%;
-// 			height: 100%;
-// 		}
-
-// 		.hamburger {
-// 			width: 24px;
-// 			height: 16px;
-// 			transition: 0.3s ease-in-out;
-
-// 			& > div {
-// 				display: block;
-// 				height: 2px;
-// 				background-color: $color__text-black;
-// 				border-radius: 10px;
-// 				margin-bottom: 5px;
-// 				transition: 0.3s ease-in-out;
-
-// 				&:nth-child(3) {
-// 					margin: 0;
-// 				}
-// 			}
-// 		}
-
-// 		&.open {
-
-// 			.hamburger {
-
-// 				& > div {
-
-// 					&:nth-child(1) {
-// 						transform: rotate(45deg) translate(5px, 4px);
-//           }
-          
-//           &:nth-child(2) {
-// 						opacity: 0;
-// 					}
-
-// 					&:nth-child(3) {
-// 						transform: rotate(-45deg) translate(5.5px, -5px);
-// 					}
-// 				}
-// 			}
-// 		}
-
-// 		@include on-state(hover, focus) {
-
-// 			.hamburger > div {
-// 				background-color: $color__text-main;
-// 			}
-// 		}
-// 	}
-
-
-
-
 
 	//=============================================================================================================
 // Contact Info
@@ -214,18 +140,6 @@
 //=============================================================================================================
 
 	.site-logo {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-	  margin: 12px 0;
-	  border-radius: 100px;
-
-		@include breakpoint(sm) {
-			display: flex;
-			justify-content: center;
-			margin: 16px 0;
-		}
-
 		&.desktop {
 			@include breakpoint(sm) {
 				display: none;

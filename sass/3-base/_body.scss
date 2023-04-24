@@ -2,6 +2,7 @@ body {
 	background: $color__background-body; // Fallback for when there is no custom background color defined.
 	width: 100%;
 	transition: transform 1s;
+	@include font-size(1.6rem);
 
 	&.slide-right {
 		transform: translateX(30vw);
@@ -22,9 +23,17 @@ body {
 	.wrapper-small {
 		display: flex;
 		align-items: space-between;
-		padding: 20px 30px;
+		padding: 20px 5vw;
 		margin: 0 auto;
-		max-width: 1200px;
+		max-width: 100vw;
+
+		@include breakpoint(lg) {
+			max-width: 90vw;
+		}
+
+		@include breakpoint(md) {
+			max-width: 75vw;
+		}
 	
 		@include breakpoint(sm) {
 			position: static;
@@ -35,7 +44,6 @@ body {
 	
 	.page-wrapper {
 		max-width: 100%;
-		margin: 0 25px;
 	}
 
 	section {

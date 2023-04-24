@@ -4,7 +4,7 @@ Theme URI: https://underscores.me/
 Author: Automattic
 Author URI: https://automattic.com/
 Description: Hi. I'm a starter theme called <code></code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
-Version: 1.0.3
+Version: 1.0.4
 Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -176,7 +176,7 @@ table {
 # Admin
 --------------------------------------------------------------*/
 html {
-  font-size: 6.25%;
+  font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -186,8 +186,7 @@ html {
 }
 
 body.login {
-  font-size: 14px;
-  font-size: 14rem;
+  font-size: 14;
   font-weight: 300;
 }
 body.login a {
@@ -266,8 +265,7 @@ body.login form.admin-email-confirm-form .admin-email__actions .button-primary {
 }
 body.login form .input {
   font-weight: normal;
-  font-size: 14px;
-  font-size: 14rem;
+  font-size: 14;
   width: 100%;
   padding: 13px 15px 15px 15px;
   margin: 8px 0 20px 0;
@@ -427,6 +425,12 @@ body {
   background: #F7F4EB;
   width: 100%;
   transition: transform 1s;
+  font-size: calc(1.285rem + 0.42vw);
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 1.6rem;
+  }
 }
 body.slide-right {
   transform: translateX(30vw);
@@ -448,9 +452,19 @@ body .wrapper {
 body .wrapper-small {
   display: flex;
   align-items: space-between;
-  padding: 20px 30px;
+  padding: 20px 5vw;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 100vw;
+}
+@media only screen and (max-width: 1200px) {
+  body .wrapper-small {
+    max-width: 90vw;
+  }
+}
+@media only screen and (max-width: 992px) {
+  body .wrapper-small {
+    max-width: 75vw;
+  }
 }
 @media only screen and (max-width: 768px) {
   body .wrapper-small {
@@ -460,7 +474,6 @@ body .wrapper-small {
 }
 body .page-wrapper {
   max-width: 100%;
-  margin: 0 25px;
 }
 body section {
   position: relative;
@@ -479,60 +492,96 @@ body .hidden {
 }
 
 h1, .h1 {
-  font-size: 36px;
-  font-size: 36rem;
+  font-size: calc(4.725rem + 41.7vw);
   font-family: "Bodoni 72";
   font-weight: 300;
   line-height: 1.4;
   text-transform: uppercase;
   margin: 0 0 20px 0;
 }
+@media (min-width: 1200px) {
+  h1, .h1 {
+    font-size: 36rem;
+  }
+}
 h1.big, .h1.big {
-  font-size: 48px;
-  font-size: 48rem;
+  font-size: calc(5.925rem + 56.1vw);
+}
+@media (min-width: 1200px) {
+  h1.big, .h1.big {
+    font-size: 48rem;
+  }
 }
 @media only screen and (max-width: 576px) {
   h1.big, .h1.big {
-    font-size: 36px;
+    font-size: calc(4.725rem + 41.7vw);
+  }
+}
+@media only screen and (max-width: 576px) and (min-width: 1200px) {
+  h1.big, .h1.big {
     font-size: 36rem;
   }
 }
 
 h2, .h2 {
-  font-size: 30px;
-  font-size: 30rem;
+  font-size: calc(1.425rem + 2.1vw);
   font-family: "Bodoni 72";
   font-weight: 300;
   line-height: 1.5;
   margin: 0 0 20px 0;
 }
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 3rem;
+  }
+}
 @media only screen and (max-width: 992px) {
   h2, .h2 {
-    font-size: 30px;
-    font-size: 30rem;
+    font-size: calc(1.425rem + 2.1vw);
+  }
+}
+@media only screen and (max-width: 992px) and (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 3rem;
   }
 }
 @media only screen and (max-width: 768px) {
   h2, .h2 {
-    font-size: 24px;
-    font-size: 24rem;
+    font-size: calc(1.365rem + 1.38vw);
     margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 2.4rem;
   }
 }
 @media only screen and (max-width: 576px) {
   h2, .h2 {
-    font-size: 20px;
-    font-size: 20rem;
+    font-size: calc(1.325rem + 0.9vw);
+  }
+}
+@media only screen and (max-width: 576px) and (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 2rem;
   }
 }
 h2.big, .h2.big {
-  font-size: 48px;
-  font-size: 48rem;
+  font-size: calc(1.605rem + 4.26vw);
+}
+@media (min-width: 1200px) {
+  h2.big, .h2.big {
+    font-size: 4.8rem;
+  }
 }
 @media only screen and (max-width: 576px) {
   h2.big, .h2.big {
-    font-size: 36px;
-    font-size: 36rem;
+    font-size: calc(1.485rem + 2.82vw);
+  }
+}
+@media only screen and (max-width: 576px) and (min-width: 1200px) {
+  h2.big, .h2.big {
+    font-size: 3.6rem;
   }
 }
 
@@ -542,15 +591,24 @@ input,
 select,
 optgroup,
 textarea {
-  font-size: 16px;
-  font-size: 16rem;
+  font-size: calc(1.285rem + 0.42vw);
   color: #222324;
   font-family: "Bodoni 72", Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
+@media (min-width: 1200px) {
+  body,
+  button,
+  input,
+  select,
+  optgroup,
+  textarea {
+    font-size: 1.6rem;
+  }
+}
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.5rem;
 }
 
 dfn,
@@ -572,10 +630,10 @@ pre {
   background: #eee;
   font-family: "Courier 10 Pitch", courier, monospace;
   line-height: 1.6;
-  margin-bottom: 1.6em;
+  margin-bottom: 1.6rem;
   max-width: 100%;
   overflow: auto;
-  padding: 1.6em;
+  padding: 1.6rem;
 }
 
 code,
@@ -610,10 +668,10 @@ nav a {
   text-transform: uppercase;
 }
 
-.link-style {
+p.link-style {
   font-family: "Bodoni 72";
   text-transform: uppercase;
-  padding: 10px;
+  padding-top: 1rem;
 }
 
 /*--------------------------------------------------------------
@@ -624,11 +682,11 @@ input[type=button],
 input[type=reset],
 input[type=submit] {
   background: #000000;
-  border: none;
+  border: red 1px;
   color: #F7F4EB;
   line-height: 1;
   padding: 0.6em 1em 0.4em;
-  margin: 0 20px;
+  margin: 0 0 0 20px;
 }
 button:hover,
 input[type=button]:hover,
@@ -647,8 +705,8 @@ input[type=submit]:focus {
 }
 
 .site-footer {
-  font-size: 12px;
-  font-size: 12rem;
+  position: relative;
+  font-size: 1.2rem;
   background-color: #F7F4EB;
 }
 @media only screen and (max-width: 768px) {
@@ -695,8 +753,20 @@ input[type=submit]:focus {
 }
 .site-footer .form {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+}
+.site-footer .footer-col {
+  display: flex;
   width: 100%;
+  align-items: center;
+}
+.site-footer .footer-col.site-logo {
+  justify-content: center;
+}
+.site-footer .footer-col.tagline {
+  justify-content: flex-end;
 }
 
 #mc_embed_signup_scroll {
@@ -767,13 +837,18 @@ input[type=submit]:focus {
   display: flex;
   justify-content: flex-start;
   flex-grow: 1;
-  padding-left: 10px;
+  padding-left: 1rem;
 }
 .header .header-left a {
   text-transform: uppercase;
   color: #830715;
   text-decoration: none;
-  font-size: 24px;
+  font-size: calc(1.365rem + 1.38vw);
+}
+@media (min-width: 1200px) {
+  .header .header-left a {
+    font-size: 2.4rem;
+  }
 }
 .header .header-right {
   display: flex;
@@ -804,6 +879,9 @@ input[type=submit]:focus {
 }
 .header .nav-menu li {
   padding: 10px;
+}
+.header .nav-menu li:nth-child(1) {
+  padding: 10px 10px 10px 0;
 }
 .header .nav-menu li a {
   display: block;
@@ -859,7 +937,12 @@ input[type=submit]:focus {
   text-align: center;
   display: block;
   padding: 25px;
-  font-size: 24px;
+  font-size: calc(1.365rem + 1.38vw);
+}
+@media (min-width: 1200px) {
+  .header .mobile-nav li a {
+    font-size: 2.4rem;
+  }
 }
 .header .mobile-nav li a:hover {
   cursor: pointer;
@@ -872,20 +955,6 @@ input[type=submit]:focus {
   padding: 5px;
 }
 
-.site-logo {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 12px 0;
-  border-radius: 100px;
-}
-@media only screen and (max-width: 768px) {
-  .site-logo {
-    display: flex;
-    justify-content: center;
-    margin: 16px 0;
-  }
-}
 @media only screen and (max-width: 768px) {
   .site-logo.desktop {
     display: none;
@@ -1583,6 +1652,28 @@ table {
   padding: 5px;
 }
 
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item {
+  Width: math(100/3) vw;
+  Border: 1px solid #DDD;
+}
+
+.size-2 {
+  width: 180px;
+}
+
+.size-3 {
+  width: 220px;
+}
+
+.size-4 {
+  width: 90px;
+}
+
 .project-image {
   position: relative;
   height: 500px;
@@ -1598,29 +1689,6 @@ table {
   grid-template-columns: 2fr 2fr 2fr;
   grid-template-rows: 400px;
   grid-gap: 20px;
-}
-
-.project-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.grid-item {
-  Float: left;
-  Width: 140px;
-  Border: 1px solid #DDD;
-}
-
-.size-2 {
-  width: 180px;
-}
-
-.size-3 {
-  width: 220px;
-}
-
-.size-4 {
-  width: 90px;
 }
 
 /*--------------------------------------------------------------

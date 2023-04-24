@@ -1,3 +1,20 @@
+
+//Project Masonry
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-item {
+  Width: math(100/3)vw;
+  Border:1px solid #DDD
+  }
+  .size-2 { width: 180px; }
+  .size-3 { width:220px; }
+  .size-4 { width: 90px; }
+
+
 .project-image {
   position: relative;
   height: 500px;

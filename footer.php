@@ -34,7 +34,7 @@
 						<img class="logo" src="<?php echo get_template_directory_uri(); ?>/media/jdesigns-logo-ruby.svg" alt="<?php bloginfo( 'name' ); ?>" />
 					</a>
 					</div>
-					<div class="form footer-col">
+					<div class="footer-col tagline">
 						<h3 class="h2 ruby">Intentional,<br> Effortless,<br> 
 						Designed For Living.</h3>
 					</div>

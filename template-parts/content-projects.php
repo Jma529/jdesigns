@@ -23,12 +23,10 @@
         // $description = get_field('description');
         
         ?>
-        <a href="<?php echo $link; ?>"><?php echo $link?>
+        <a href="<?php echo $link; ?>">
         <article class="grid-item">
           <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
           <div class="hover-content">
-    
-
             <h3 class="name"><?php the_title(); ?></h3>
             <button>View Project<span>-></span></button>
           </div>

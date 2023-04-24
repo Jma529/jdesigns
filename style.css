@@ -1460,38 +1460,6 @@ table {
   }
 }
 
-#our-story, #our-people, #capabilities, #portfolio, #partners, #contact {
-  width: 50vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-  opacity: 1;
-  transform: translateX(100%);
-  transition: transform 1s cubic-bezier(0.55, 0, 0.1, 1);
-  transition-property: transform;
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-  transition-delay: 0s;
-  overflow: auto;
-}
-@media only screen and (max-width: 768px) {
-  #our-story, #our-people, #capabilities, #portfolio, #partners, #contact {
-    width: 100%;
-  }
-}
-#our-story.active, #our-people.active, #capabilities.active, #portfolio.active, #partners.active, #contact.active {
-  transform: translateX(0%);
-}
-#our-story.black, #our-people.black, #capabilities.black, #portfolio.black, #partners.black, #contact.black {
-  background-color: #000000;
-}
-#our-story .wrapper, #our-people .wrapper, #capabilities .wrapper, #portfolio .wrapper, #partners .wrapper, #contact .wrapper {
-  display: flex;
-  justify-content: center;
-  padding: 50px;
-}
-
 .content {
   flex-direction: column;
   text-align: center;
@@ -1652,43 +1620,61 @@ table {
   padding: 5px;
 }
 
-.project-info {
+.project-grid-item {
+  position: relative;
+  float: left;
+  width: 33vw;
+  height: 500px;
+}
+.project-grid-item:nth-child(2) {
+  height: 800px;
+}
+.project-grid-item article {
+  height: 100%;
+}
+.project-grid-item:hover .hover-content {
+  opacity: 70%;
+}
+.project-grid-item .project-info {
   display: flex;
   flex-direction: column;
 }
-
-.grid-item {
-  Width: math(100/3) vw;
-  Border: 1px solid #DDD;
-}
-
-.size-2 {
-  width: 180px;
-}
-
-.size-3 {
-  width: 220px;
-}
-
-.size-4 {
-  width: 90px;
+.project-grid-item .hover-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #F7F4EB;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  color: #222324;
 }
 
 .project-image {
   position: relative;
-  height: 500px;
+  height: 100%;
   min-height: 400px;
   padding: 0;
   background-position: center center;
-  background-size: full;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
-  grid-template-rows: 400px;
-  grid-gap: 20px;
+  grid-template-rows: max-content;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
 }
 
 /*--------------------------------------------------------------

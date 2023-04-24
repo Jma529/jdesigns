@@ -25,39 +25,6 @@
 // General 
 
 
-#our-story, #our-people, #capabilities, #portfolio, #partners, #contact {
-  width: 50vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0;
-  opacity: 1;
-  transform: translateX(100%);
-  transition: transform 1s cubic-bezier(0.55, 0, 0.1, 1);
-  transition-property: transform;
-  transition-duration: 1s;
-  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
-  transition-delay: 0s;
-  overflow: auto;
-
-  @include breakpoint(sm) {
-    width: 100%;
-  }
-&.active {
-  transform: translateX(0%);
-}
-
-  &.black {
-    background-color: $color__backgroud-black;
-  }
-
-  .wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-  }
-}
-
 .content {
   flex-direction: column;
   text-align: center;

@@ -39,4 +39,13 @@ jQuery(document).ready(function () {
     arrows: false,
     infinite: true,
   });
+
+  // Masonry
+
+  $(".project-grid").masonry({
+    // options
+    itemSelector: ".project-grid-item",
+    columnWidth: 200,
+    gutter: 10,
+  });
 });

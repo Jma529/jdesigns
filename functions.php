@@ -148,6 +148,9 @@ function jdesigns_scripts() {
 
 	wp_register_script('slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array('jquery'), '1.0.0'); 
 	wp_enqueue_script('slick'); 
+
+	wp_register_script('masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array('jquery'), '1.0.0');
+	wp_enqueue_script('masonry');
 	
 	
 	wp_enqueue_style( 'jdesigns-style', get_stylesheet_uri(), array(), THEME_VERSION, 'all' );

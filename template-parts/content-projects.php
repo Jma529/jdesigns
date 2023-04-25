@@ -6,14 +6,15 @@
     'posts_per_page'    => -1
   );
   $project = new WP_Query($args);
+  $count = 1;
 ?>
 
 
 <?php if( $project -> have_posts() ): ?>
 
   <section class="section-projects">
-    <div class="container">
-      <div class="project-grid">
+    <div class="project-grid">
+    <div class="grid-sizer"></div> 
       
       <?php while( $project -> have_posts() ) : $project -> the_post(); 
       
@@ -23,7 +24,8 @@
         // $description = get_field('description');
         
         ?>
-        <a href="<?php echo $link; ?>" class="project-grid-item">
+        
+        <a href="<?php echo $link; ?>" class="project-grid-item <?php the_ID(); ?>">
         <article>
           <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
           <div class="hover-content">
@@ -35,7 +37,6 @@
       </a>
 
       <?php endwhile; wp_reset_postdata(); ?>
-    </div>
   </div>
 </section>
 

@@ -1620,13 +1620,25 @@ table {
   padding: 5px;
 }
 
+.project-grid {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: max-content;
+}
+
+.grid-sizer {
+  width: 33.33%;
+}
+
 .project-grid-item {
-  position: relative;
+  width: 33.33%;
   float: left;
-  width: 33vw;
   height: 500px;
 }
 .project-grid-item:nth-child(2) {
+  height: 800px;
+}
+.project-grid-item:nth-child(5) {
   height: 800px;
 }
 .project-grid-item article {
@@ -1634,10 +1646,6 @@ table {
 }
 .project-grid-item:hover .hover-content {
   opacity: 70%;
-}
-.project-grid-item .project-info {
-  display: flex;
-  flex-direction: column;
 }
 .project-grid-item .hover-content {
   position: absolute;
@@ -1664,12 +1672,6 @@ table {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.project-grid {
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  grid-template-rows: max-content;
 }
 
 .project-info {

@@ -45,7 +45,6 @@ jQuery(document).ready(function () {
   $(".project-grid").masonry({
     // options
     itemSelector: ".project-grid-item",
-    columnWidth: 200,
-    gutter: 10,
+    percentPosition: true,
   });
 });

@@ -1,13 +1,26 @@
 
 // Project Archive Masonry
 
-.project-grid-item {
-  position: relative;
+.project-grid {
+	display: grid;
+	grid-template-columns: 33.33% 33.33% 33.33%;
+	grid-template-rows: max-content;
+}
+
+.grid-sizer {
+  width: 33.33%;
+}
+
+ .project-grid-item {
+  width: 33.33%;
   float: left;
-  width: 33vw;
   height: 500px;
 
   &:nth-child(2) {
+    height: 800px;
+  } 
+  
+  &:nth-child(5) {
     height: 800px;
   } 
 
@@ -19,12 +32,6 @@
   .hover-content {
     opacity: 70%;
   }
-
-
-  .project-info {
-  display: flex;
-  flex-direction: column;
-}
 
   .hover-content {
     
@@ -57,11 +64,6 @@
 }
   
 
-.project-grid {
-	display: grid;
-	grid-template-columns: 2fr 2fr 2fr;
-	grid-template-rows: max-content;
-}
 
 // Single project
 

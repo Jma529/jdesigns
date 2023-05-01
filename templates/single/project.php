@@ -2,36 +2,36 @@
 
 // Variables
 
-$image_1 = get_field('image_1');
-$image_2 = get_field('image_2');
-$image_3 = get_field('image_3');
-$image_4 = get_field('image_4');
-$image_5 = get_field('image_5');
-$image_6 = get_field('image_6');
-$image_7 = get_field('image_7');
-$image_8 = get_field('image_8');
-$image_9 = get_field('image_9');
-$image_10 = get_field('image_10');
-$image_11 = get_field('image_11');
-$image_12 = get_field('image_12');
-$image_13 = get_field('image_13');
-$image_14 = get_field('image_14');
-$image_15 = get_field('image_15');
-$image_16 = get_field('image_16');
+$images = acf_photo_gallery('project_gallery', $post->ID);
 
 ?>
 
 
+<section class="single-project">
+<h1><?php the_title()?></h1>
+<div class="project-gallery grid">
+  <?php
+//Check if return array has anything in it
+ if( count($images) ):
+  //Cool, we got some data so now let's loop over it
+  foreach($images as $image):
+      $id = $image['id']; // The attachment id of the media
+      $title = $image['title']; //The title
+      $caption= $image['caption']; //The caption
+      $full_image_url= $image['full_image_url']; //Full size image url
+      $full_image_url = acf_photo_gallery_resize_image($full_image_url, 262, 160); //Resized size to 262px width by 160px height image url
+      $thumbnail_image_url= $image['thumbnail_image_url']; //Get the thumbnail size image url 150px by 150px
+      $url= $image['url']; //Goto any link when clicked
+      $target= $image['target']; //Open normal or new tab
+?>
 
-<section class="project-info">
-<h1>hello!</h1>
-<h2><?php the_title()?></h2>
-<div class="grid">
-  <div class="grid-item size-4"><img src="<?php echo $image_1;?>"/></div>
-  <div class="grid-item size-2"><img src="<?php echo $image_2;?>"/></div>
-  <div class="grid-item size-3"><img src="<?php echo $image_3;?>"/></div>
-  <div class="grid-item size-4"><img src="<?php echo $image_4;?>"/></div>
-  <div class="grid-item size-2"><img src="<?php echo $image_5;?>"/></div>
-  <div class="grid-item size-3"><img src="<?php echo $image_6;?>"/></div>
+
+  <div class="project-gallery-item">
+        <?php if( !empty($url) ){ ?><a class="project-image" href="<?php echo $url; ?>" <?php echo ($target == 'true' )? 'target="_blank"': ''; ?>><?php } ?>
+            <div class="project-image" style="background-image: url('<?php echo $full_image_url ?>');"></div>
+        <?php if( !empty($url) ){ ?></a><?php } ?>
+    </div>
 </div>
 </section>
+
+<?php endforeach; endif; ?>

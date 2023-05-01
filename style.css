@@ -437,16 +437,11 @@ body.slide-right {
   overflow: hidden;
 }
 body .wrapper {
-  max-width: 1415px;
+  padding: 0 5vw;
 }
 @media only screen and (max-width: 992px) {
   body .wrapper {
-    max-width: 1000px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  body .wrapper {
-    max-width: 800px;
+    padding: 0 60px;
   }
 }
 body .wrapper-small {
@@ -458,12 +453,7 @@ body .wrapper-small {
 }
 @media only screen and (max-width: 1200px) {
   body .wrapper-small {
-    max-width: 90vw;
-  }
-}
-@media only screen and (max-width: 992px) {
-  body .wrapper-small {
-    max-width: 75vw;
+    padding: 20px 60px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -492,7 +482,7 @@ body .hidden {
 }
 
 h1, .h1 {
-  font-size: calc(4.725rem + 41.7vw);
+  font-size: calc(1.485rem + 2.82vw);
   font-family: "Bodoni 72";
   font-weight: 300;
   line-height: 1.4;
@@ -501,25 +491,25 @@ h1, .h1 {
 }
 @media (min-width: 1200px) {
   h1, .h1 {
-    font-size: 36rem;
+    font-size: 3.6rem;
   }
 }
 h1.big, .h1.big {
-  font-size: calc(5.925rem + 56.1vw);
+  font-size: calc(1.605rem + 4.26vw);
 }
 @media (min-width: 1200px) {
   h1.big, .h1.big {
-    font-size: 48rem;
+    font-size: 4.8rem;
   }
 }
 @media only screen and (max-width: 576px) {
   h1.big, .h1.big {
-    font-size: calc(4.725rem + 41.7vw);
+    font-size: calc(1.485rem + 2.82vw);
   }
 }
 @media only screen and (max-width: 576px) and (min-width: 1200px) {
   h1.big, .h1.big {
-    font-size: 36rem;
+    font-size: 3.6rem;
   }
 }
 
@@ -711,8 +701,8 @@ input[type=submit]:focus {
 }
 @media only screen and (max-width: 768px) {
   .site-footer {
-    position: static;
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 }
@@ -726,6 +716,11 @@ input[type=submit]:focus {
   align-items: center;
   width: 100%;
   height: auto;
+}
+@media only screen and (max-width: 768px) {
+  .site-footer .footer-content .footer-top {
+    justify-items: center;
+  }
 }
 .site-footer .footer-content .footer-bottom {
   display: flex;
@@ -1629,17 +1624,38 @@ table {
 .grid-sizer {
   width: 33.33%;
 }
+@media only screen and (max-width: 768px) {
+  .grid-sizer {
+    width: 50%;
+  }
+}
 
 .project-grid-item {
   width: 33.33%;
   float: left;
   height: 500px;
 }
+@media only screen and (max-width: 768px) {
+  .project-grid-item {
+    width: 50%;
+    height: 300px;
+  }
+}
 .project-grid-item:nth-child(2) {
   height: 800px;
 }
+@media only screen and (max-width: 768px) {
+  .project-grid-item:nth-child(2) {
+    height: 300px;
+  }
+}
 .project-grid-item:nth-child(5) {
   height: 800px;
+}
+@media only screen and (max-width: 768px) {
+  .project-grid-item:nth-child(5) {
+    height: 300px;
+  }
 }
 .project-grid-item article {
   height: 100%;
@@ -1674,9 +1690,9 @@ table {
   background-repeat: no-repeat;
 }
 
-.project-info {
-  display: flex;
-  flex-direction: column;
+.project-gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 /*--------------------------------------------------------------

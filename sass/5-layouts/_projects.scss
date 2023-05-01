@@ -9,6 +9,10 @@
 
 .grid-sizer {
   width: 33.33%;
+
+  @include breakpoint(sm) {
+    width: 50%;
+  }
 }
 
  .project-grid-item {
@@ -16,12 +20,25 @@
   float: left;
   height: 500px;
 
+  @include breakpoint(sm) {
+    width: 50%;
+    height: 300px;
+  }
+
   &:nth-child(2) {
     height: 800px;
+
+    @include breakpoint(sm) {
+      height: 300px;
+    }
   } 
   
   &:nth-child(5) {
     height: 800px;
+
+    @include breakpoint(sm) {
+      height: 300px;
+    }
   } 
 
   article {
@@ -67,7 +84,11 @@
 
 // Single project
 
-.project-info {
-  display: flex;
-  flex-direction: column;
-}
+.project-gallery
+
+  &.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+
+

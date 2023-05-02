@@ -14,22 +14,31 @@
 
 		.footer-top {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: repeat(3, 1fr);
 			justify-items: flex-start;
 			align-items: center;
 			width: 100%;
 			height: auto;
+			row-gap: 4;
 
 			@include breakpoint(sm) {
-				justify-items: center;
+				display: flex;
+				flex-direction: column;
 			}
 		}	
 
 		.footer-bottom {
-			display: flex;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
 
 			.footer-menu {
-				flex-grow: 1;
+				grid-column: 1;
+			}
+			@include breakpoint(sm) {
+				display: flex;
+				flex-direction: column;
+				text-align: center;
+				align-items: center;
 			}
 		}
 	}
@@ -58,10 +67,17 @@
 	}
 
 	.form {
+		grid-column: 3;
+		justify-self: flex-end;
 		display: flex;
 		flex-direction: column;
     align-items: flex-start;
     width: auto;
+
+		@include breakpoint(sm) {
+			align-items: center;
+			margin-top: 2rem;
+		}
 	}
 
 	.footer-col {
@@ -70,11 +86,17 @@
 		align-items: center;
 
 		&.site-logo {
+			grid-column: 2;
 			justify-content: center;
 		}
 
 		&.tagline {
 			justify-content: flex-end;
+			@include breakpoint(sm) {
+				justify-content: center;
+				text-align: center;
+				margin-top: 2rem;
+			}
 		}
 	}
 

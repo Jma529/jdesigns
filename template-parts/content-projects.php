@@ -6,7 +6,6 @@
     'posts_per_page'    => -1
   );
   $project = new WP_Query($args);
-  $count = 1;
 ?>
 
 

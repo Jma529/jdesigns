@@ -11,10 +11,6 @@ body {
 
 	.wrapper {
 		padding: 0 5vw;
-
-		@include breakpoint(md) {
-			padding: 0 60px;
-		}
 	}
 
 	.wrapper-small {
@@ -41,7 +37,6 @@ body {
 
 	section {
 		position: relative;
-		padding-top: 80px;	
 	}
 
 	.site {

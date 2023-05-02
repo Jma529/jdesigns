@@ -6,22 +6,16 @@
   background-size: contain;
   background-repeat: no-repeat;
   bottom: 200px;
+  
+  @include breakpoint(sm) {
+    height: auto;
+    position: static;
+  }
 }
 
 .relative {
   position: relative;
 }
-
-
-.front-page {
-
-  @include breakpoint(sm){
-    position: fixed;
-    right: 0;
-    top: 0;
-  }
-}
-
 // General 
 
 

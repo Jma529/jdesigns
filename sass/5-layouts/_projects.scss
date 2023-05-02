@@ -83,12 +83,49 @@
 
 
 // Single project
+.single-project {
+  
+  .project-gallery {
+    &.grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1.6rem;
+      row-gap: 2rem;
 
-.project-gallery
-
-  &.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+      @include breakpoint(sm) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
   }
+  
+  .project-gallery-item {
+    @include first(3) {
+      grid-row: 1;
+      grid-column: span 1;
+    }
+    &:nth-child(4) {
+      grid-row: 3;
+      grid-column: span 2;
+    }
+    &:nth-child(6) {
+      grid-row: 4;
+      grid-column: span 1;
+    }
+    &:nth-child(7) {
+      grid-row: 4;
+      grid-column: span 2;
+    }
+    @include between(8, 10) {
+      grid-row: 5;
+      grid-column: span 1;
+    }   
+  }
+
+  .project-info {
+    grid-row: 2;
+    grid-column: 2 / span 2;
+    padding: 5vw;
+  }
+}
 
 

@@ -26,11 +26,10 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'jdesigns' ); ?></a>
-  <div class="page-wrapper">
     <header class="header">
       <div class="wrapper-small">
             <div class="header-left">
-              <a href="<?php echo get_home_url(); ?>" class="site-logo-text">
+              <a href="<?php echo get_home_url(); ?>">
               J Designs
               </a>
             </div>
@@ -53,10 +52,10 @@
                     <input id="hamburger" class="hamburger" type="checkbox"/>
                       <label class="hamburger" for="hamburger">
                       <i></i>
-                      <text>
+                      <!-- <text>
                         <close>close</close>
                         <open>menu</open>
-                      </text>
+                      </text> -->
                   </label>
                   <nav class="mobile-nav" aria-label="Mobile Menu">
                   <?php

@@ -33,8 +33,7 @@
       
       </div>
       <?php endforeach; endif; ?>
-
-        <!-- <h1 class="hidden"><?php echo the_title()?></h1> -->
+      
     </section>
 
 	</main><!-- #main -->

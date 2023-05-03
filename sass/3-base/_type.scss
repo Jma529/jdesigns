@@ -9,6 +9,7 @@ h1, .h1 {
   line-height: 1.4;
   text-transform: uppercase;
   margin: 0 0 $content-line-break 0;
+  letter-spacing: .5rem;
 
   &.small {
     @include font-size(2.4rem);
@@ -139,4 +140,21 @@ p {
 .form-fields {
   @include font-size(1.2rem);
   text-transform: uppercase;
+}
+
+.button {
+  @include font-size(1.2rem);
+  background-color: $color__text-black;
+  padding: 1rem 2rem;
+  color: #F7F4EB;
+  margin: 0;
+  text-transform: uppercase;
+  font-family: $font__main;
+  letter-spacing: .1rem;
+
+  &:hover {
+    color: #F7F4EB;
+    font-weight: bold;
+  }
+
 }

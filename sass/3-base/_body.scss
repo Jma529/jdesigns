@@ -20,12 +20,8 @@ body {
 		margin: 0 auto;
 		max-width: 100vw;
 
-		@include breakpoint(lg) {
-			padding: 20px 60px;
-		}
-	
 		@include breakpoint(sm) {
-			position: static;
+			padding: 20px 40px;
 			height: auto;
 		}
 

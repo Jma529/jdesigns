@@ -29,8 +29,7 @@
           <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
           <div class="hover-content">
             <h3 class="name h2"><?php the_title(); ?></h3>
-            <p><?php the_content() ?></p>
-            <button>View Project<span>-></span></button>
+            <button class="button">View Project</button>
           </div>
         </article>
       </a>

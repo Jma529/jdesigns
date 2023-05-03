@@ -1,11 +1,10 @@
 .section-image-cover {
   position: relative;
-  height: 60vh;
+  height: 100vh;
   padding: 0;
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  bottom: 200px;
   
   @include breakpoint(sm) {
     height: auto;

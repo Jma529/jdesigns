@@ -14,8 +14,6 @@ body {
 	}
 
 	.wrapper-small {
-		display: flex;
-		align-items: space-between;
 		padding: 20px 5vw;
 		margin: 0 auto;
 		max-width: 100vw;
@@ -33,13 +31,21 @@ body {
 
 	section {
 		position: relative;
+
+		&.padding {
+			padding: 4rem 0 2rem 0;
+		}
+		
+	
 	}
 
-	.site {
+	main {
 		position: relative;
+		margin-top: 9vh;
 		
 		@include breakpoint(sm) {
 			flex-direction: column;
+			margin-top: 0;
 		}
 	}
 	

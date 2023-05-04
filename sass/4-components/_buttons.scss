@@ -1,20 +1,26 @@
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-	background: $color__backgroud-black;
-	border: red 1px;
-	color: $color__background-body;
-	line-height: 1;
-	padding: 0.6em 1em 0.4em;
-	margin: 0 0 0 20px;
+input[type="submit"], .button {
 
-	&:hover {
-		color: $color__link-hover;
-	}
+		@include font-size(1.2rem);
+		background-color: $color__text-black;
+		padding: 1rem 2rem;
+		color: #F7F4EB;
+		margin: 0;
+		text-transform: uppercase;
+		font-family: $font__main;
+		letter-spacing: .1rem;
+	
+		&:hover {
+			color: #F7F4EB;
+			font-weight: bold;
+		}
 
-	&:active,
-	&:focus {
-		color: $color__link-hover;
+		&:active,
+		&:focus {
+			color: #F7F4EB;
+			font-weight: bold;
+		}
+	
 	}
-}

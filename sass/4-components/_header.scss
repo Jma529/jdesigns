@@ -1,5 +1,6 @@
 .header {
 	position: fixed;
+  top: 0;
 	width: 100%;
 	z-index: 9999;
 	background-color: $color__background-body;
@@ -9,6 +10,15 @@
 		position: static;
 		width: 100%;
 	}
+
+  .wrapper-small {
+    display: flex;
+		align-items: space-between;
+    
+    @include breakpoint(xs) {
+      padding: 10px;
+    }
+  }
 
 	.header-left {
 		display: flex;

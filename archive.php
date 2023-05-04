@@ -11,7 +11,8 @@ get_header();
 ?>
 
 
-<main>
+<main class="<?php echo strtolower( get_post_type_object( get_post_type() )->labels->name ) . '-archive'; ?>">
+
 
 <?php
 
@@ -19,14 +20,18 @@ get_header();
 // The loop is handled in each of these files respectively 
 if( is_post_type_archive( JDESIGNS_PROJECT_CPT_NAME ) ) : 
 
-	get_template_part('template-parts/content-projects');
+	get_template_part('templates/archive/projects');
 
+	elseif( is_post_type_archive( JDESIGNS_TEAM_CPT_NAME ) ) : 
+
+		get_template_part('template-parts/archive/studio');
+		
 
 	
 // For everything else, create a standard archive layout with a post list
-else : 
 
 
+else :
 
 			get_template_part( 'template-parts/content', 'none' );
 			

@@ -25,7 +25,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'jdesigns' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#"><?php esc_html_e( 'Skip to content', 'jdesigns' ); ?></a>
     <header class="header">
       <div class="wrapper-small">
             <div class="header-left">

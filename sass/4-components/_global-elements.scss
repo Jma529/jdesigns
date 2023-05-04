@@ -2,5 +2,19 @@
   display: flex;
 }
 
-//Wrapper 
+.text-block {
+  background-color: $color__background-block;
+  width: 100%;
+  padding: 5vw;
+}
 
+
+ div {
+  &.line-small {
+    width: 30px;
+    background-color: $color__backgroud-black;
+    height: .2px;
+    margin-bottom: 0;
+    margin-left: 5px;
+  }
+}

@@ -29,11 +29,6 @@ h2, .h2 {
 
   @include breakpoint(sm) {
     @include font-size(2.4rem);
-    margin-bottom: 10px;
-  }
-
-  @include breakpoint(xs) {
-    @include font-size(2rem);
   }
 
   &.big {
@@ -65,6 +60,10 @@ textarea {
 p {
   @include font-size(1.8rem);
 	margin-bottom: 1.5rem;
+
+  @include breakpoint(sm) {
+    @include font-size(1.6rem);
+  }
 }
 
 dfn,
@@ -142,19 +141,6 @@ p {
   text-transform: uppercase;
 }
 
-.button {
-  @include font-size(1.2rem);
-  background-color: $color__text-black;
-  padding: 1rem 2rem;
-  color: #F7F4EB;
-  margin: 0;
-  text-transform: uppercase;
-  font-family: $font__main;
-  letter-spacing: .1rem;
-
-  &:hover {
-    color: #F7F4EB;
-    font-weight: bold;
-  }
-
+strong, .bold {
+  font-weight: 800;
 }

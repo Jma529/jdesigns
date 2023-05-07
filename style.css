@@ -1542,6 +1542,24 @@ table {
   grid-gap: 2rem;
 }
 
+.entry-content .press {
+  color: #222324;
+}
+.entry-content .press h2 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.entry-content .press h3 {
+  margin-bottom: 1rem;
+}
+.entry-content .press .press-link {
+  color: #222324;
+  margin-bottom: 1.5rem;
+}
+.entry-content .press .bottom-margin {
+  margin-bottom: 3rem;
+}
+
 .section-image-cover {
   position: relative;
   height: 100vh;

@@ -83,3 +83,28 @@
 			grid-gap: 2rem;
 		}
 	}
+
+	// Press styles
+
+	.entry-content {
+		.press {
+			color: $color__text-main;
+
+			h2 {
+				font-weight: bold;
+				margin-bottom: .5rem;
+			}
+
+			h3 {
+				margin-bottom: 1rem;
+			}
+
+			.press-link {
+				color: $color__text-main;
+				margin-bottom: 1.5rem;
+			}
+			.bottom-margin {
+				margin-bottom: 3rem;
+			}
+		}
+	}

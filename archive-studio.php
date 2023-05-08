@@ -23,7 +23,7 @@ get_header();
 
 
 
-<main class="studio">
+<main class="studio twocol">
   <section>
     <div class="wrapper-small">
     <h1><?php the_title(); ?></h1>

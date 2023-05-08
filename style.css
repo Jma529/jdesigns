@@ -1471,26 +1471,26 @@ table {
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
-.studio .grid {
+.twocol .grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: auto;
   grid-gap: 4rem;
 }
 @media only screen and (max-width: 768px) {
-  .studio .grid {
+  .twocol .grid {
     grid-template-columns: 1fr;
   }
 }
-.studio .grid .col-1 {
+.twocol .grid .col-1 {
   grid-column-start: 1;
 }
 @media only screen and (max-width: 768px) {
-  .studio .grid .col-1 {
+  .twocol .grid .col-1 {
     grid-row-start: 1;
   }
 }
-.studio .grid .team-image {
+.twocol .grid .team-image {
   position: relative;
   min-height: 75vh;
   padding: 0;
@@ -1498,44 +1498,44 @@ table {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.studio .grid .team-image.small {
+.twocol .grid .team-image.small {
   min-height: 40vh;
 }
-.studio .grid .contact-info {
+.twocol .grid .contact-info {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   height: 30rem;
 }
-.studio .grid .contact-info .location p {
+.twocol .grid .contact-info .location p {
   margin-bottom: 0;
 }
-.studio .grid .col-2 {
+.twocol .grid .col-2 {
   grid-column-start: 2;
 }
 @media only screen and (max-width: 768px) {
-  .studio .grid .col-2 {
+  .twocol .grid .col-2 {
     grid-column-start: 1;
   }
 }
-.studio .grid .row-2 {
+.twocol .grid .row-2 {
   grid-row-start: 2;
 }
-.studio .content {
+.twocol .content {
   text-align: left;
   padding: 0;
   margin-top: 2rem;
 }
-.studio .content p {
+.twocol .content p {
   text-align: left;
 }
-.studio .accent {
+.twocol .accent {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 10rem;
 }
-.studio .team-grid {
+.twocol .team-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 2rem;

@@ -12,7 +12,7 @@ $email = get_field('email');
 $tel = get_field('telephone');
 $location_1 = get_field('location_1');
 $location_2 = get_field('location_2');
-$contact_form = do_shortcode('[contact-form-7 id="163" title="Contact form"]');
+$contact_form = do_shortcode('[ninja_form id=1]');
 
 get_header();
 ?>

@@ -5,7 +5,25 @@
   display: flex;
   align-items: center;
 
+  .mc-field-group {
+    margin-right: 1rem;
+  }
+
   input {
     padding: 1rem 2rem;
   }
  }
+
+ // Ninja forms
+
+ .nf-after-field {
+  .nf-error-msg {
+    @include font-size(1.6rem);
+   }
+ }
+
+ .nf-error-field-errors {
+  @include font-size(1.6rem);
+ }
+
+

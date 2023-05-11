@@ -36,7 +36,7 @@
 							<a href="#">Pinterest</a>
 						</li>
 						<li>
-							<a href="<?php get_permalink( get_the_ID(167) );?>">Contact</a>
+							<a href="<?php echo get_permalink( get_page_by_path('contact') );?>">Contact</a>
 						</li>
 					</ul>
 				</nav>

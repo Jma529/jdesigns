@@ -3,13 +3,13 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"], .button {
 
-		@include font-size(1.2rem);
+		@include font-size(1.4rem);
 		background-color: $color__text-black;
 		padding: 1rem 2rem;
 		color: #F7F4EB;
 		margin: 0;
 		text-transform: uppercase;
-		font-family: $font__main;
+		font-family: $font__sans;
 		letter-spacing: .1rem;
 	
 		&:hover {

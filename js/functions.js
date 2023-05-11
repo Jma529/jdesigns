@@ -45,6 +45,7 @@ jQuery(document).ready(function () {
   $(".project-grid").masonry({
     // options
     columnWidth: ".grid-sizer",
+    gutter: ".gutter-sizer",
     itemSelector: ".project-grid-item",
     percentPosition: true,
   });

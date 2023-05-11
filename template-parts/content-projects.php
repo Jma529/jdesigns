@@ -1,8 +1,8 @@
  <?php
   $args = array(
     'post_type'         => JDESIGNS_PROJECT_CPT_NAME,
-    'orderby'           => 'menu_order',
-    'order'             => 'ASC',
+    'orderby'           => 'date',
+    'order'             => 'DESC',
     'posts_per_page'    => -1
   );
   $project = new WP_Query($args);
@@ -14,6 +14,7 @@
   <section class="section-projects">
     <div class="project-grid">
     <div class="grid-sizer"></div> 
+    <div class="gutter-sizer"></div>
       
       <?php while( $project -> have_posts() ) : $project -> the_post(); 
       

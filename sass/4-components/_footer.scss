@@ -1,6 +1,6 @@
 .site-footer {
 	position: relative;
-  @include font-size(1.2rem);
+  @include font-size(1.4rem);
   background-color: $color__background-footer;
 
   @include breakpoint(sm) {

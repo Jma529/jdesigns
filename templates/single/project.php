@@ -3,6 +3,10 @@
 // Variables
 
 $images = acf_photo_gallery('project_gallery', $post->ID);
+$location = get_field('location');
+$photographer = get_field('photographer');
+$builder = get_field('builder');
+$architect = get_field('architect');
 
 
 ?>
@@ -36,9 +40,22 @@ $images = acf_photo_gallery('project_gallery', $post->ID);
         <h1><?php echo $project_title ?></h2>
         <p><?php the_content();?></p>
         <div class="labels">
-          <p>Location</p>
-          <p>Photography by</p>
-          <p>Builder:</p>
+          <?php if($location) : ?>
+            <p><?php echo $location ?></p>
+            <?php endif; ?>
+
+          <?php if($photographer) : ?>
+            <p>Photography by: <?php echo $photographer; ?></p>
+            <?php endif; ?>
+            
+            <?php if($builder) : ?>
+            <p>Architecture by: <?php echo $architect; ?></p>
+            <?php endif; ?>
+
+          <?php if($builder) : ?>
+            <p>Build by: <?php echo $builder ?></p>
+            <?php endif; ?>
+
         </div> 
     </div>
       <?php

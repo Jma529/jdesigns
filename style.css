@@ -477,7 +477,7 @@ h1, .h1 {
   font-size: calc(1.485rem + 4.40625vw);
   font-family: "Bodoni 72";
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.1;
   text-transform: uppercase;
   margin: 0 0 20px 0;
   letter-spacing: 0.5rem;
@@ -500,7 +500,7 @@ h2, .h2 {
   font-size: calc(1.425rem + 3.28125vw);
   font-family: "Bodoni 72";
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.3;
   margin: 0 0 20px 0;
 }
 @media (min-width: 768px) {
@@ -547,6 +547,17 @@ h2.big, .h2.big {
   }
 }
 
+h3, .h3 {
+  font-size: calc(1.325rem + 1.40625vw);
+  font-family: "Bodoni 72";
+  margin: 0 0 20px 0;
+}
+@media (min-width: 768px) {
+  h3, .h3 {
+    font-size: 2rem;
+  }
+}
+
 body,
 button,
 input,
@@ -555,7 +566,7 @@ optgroup,
 textarea {
   font-size: calc(1.285rem + 0.65625vw);
   color: #222324;
-  font-family: "Bodoni 72", Helvetica, Arial, sans-serif;
+  font-family: "Bodoni 72", Helvetica, Arial, serif;
   line-height: 1.5;
 }
 @media (min-width: 768px) {
@@ -653,6 +664,13 @@ p.link-style {
 
 .labels {
   font-size: 1.2rem;
+  font-family: "Proxima Nova", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.labels p {
+  margin-bottom: 10px;
 }
 
 .form-fields {
@@ -671,14 +689,22 @@ button,
 input[type=button],
 input[type=reset],
 input[type=submit], .button {
-  font-size: 1.2rem;
+  font-size: calc(1.265rem + 0.28125vw);
   background-color: #222324;
   padding: 1rem 2rem;
   color: #F7F4EB;
   margin: 0;
   text-transform: uppercase;
-  font-family: "Bodoni 72", Helvetica, Arial, sans-serif;
+  font-family: "Proxima Nova", sans-serif;
   letter-spacing: 0.1rem;
+}
+@media (min-width: 768px) {
+  button,
+  input[type=button],
+  input[type=reset],
+  input[type=submit], .button {
+    font-size: 1.4rem;
+  }
 }
 button:hover,
 input[type=button]:hover,
@@ -700,8 +726,13 @@ input[type=submit]:focus, .button:active, .button:focus {
 
 .site-footer {
   position: relative;
-  font-size: 1.2rem;
+  font-size: calc(1.265rem + 0.28125vw);
   background-color: #F7F4EB;
+}
+@media (min-width: 768px) {
+  .site-footer {
+    font-size: 1.4rem;
+  }
 }
 @media only screen and (max-width: 768px) {
   .site-footer {
@@ -799,8 +830,29 @@ input[type=submit]:focus, .button:active, .button:focus {
   display: flex;
   align-items: center;
 }
+#mc_embed_signup_scroll .mc-field-group {
+  margin-right: 1rem;
+}
 #mc_embed_signup_scroll input {
   padding: 1rem 2rem;
+}
+
+.nf-after-field .nf-error-msg {
+  font-size: calc(1.285rem + 0.65625vw);
+}
+@media (min-width: 768px) {
+  .nf-after-field .nf-error-msg {
+    font-size: 1.6rem;
+  }
+}
+
+.nf-error-field-errors {
+  font-size: calc(1.285rem + 0.65625vw);
+}
+@media (min-width: 768px) {
+  .nf-error-field-errors {
+    font-size: 1.6rem;
+  }
 }
 
 .gallery-item {
@@ -1213,8 +1265,8 @@ label.hamburger {
   z-index: 9999;
   position: relative;
   display: block;
-  height: 50px;
-  width: 50px;
+  height: 4rem;
+  width: 4rem;
   color: #830715;
 }
 label.hamburger:hover {
@@ -1243,7 +1295,7 @@ label.hamburger text open {
 label.hamburger > i {
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 1px;
   top: 50%;
   background-color: #830715;
   pointer-events: auto;
@@ -1254,7 +1306,7 @@ label.hamburger > i:before, label.hamburger > i:after {
   position: absolute;
   display: block;
   width: 100%;
-  height: 2px;
+  height: 1px;
   left: 50%;
   background-color: #830715;
   content: "";
@@ -1292,6 +1344,7 @@ input[type=datetime-local],
 input[type=color],
 textarea {
   color: #666;
+  font-family: "Proxima Nova", sans-serif;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 3px;
@@ -1506,6 +1559,7 @@ table {
   flex-direction: column;
   justify-content: space-evenly;
   height: 30rem;
+  font-family: "Proxima Nova", sans-serif;
 }
 .twocol .grid .contact-info .location p {
   margin-bottom: 0;
@@ -1528,6 +1582,7 @@ table {
 }
 .twocol .content p {
   text-align: left;
+  font-family: "Proxima Nova", sans-serif;
 }
 .twocol .accent {
   display: flex;
@@ -1541,6 +1596,18 @@ table {
   margin-top: 2rem;
   grid-gap: 2rem;
 }
+.twocol .team-grid h3 {
+  margin-bottom: 0.5rem;
+}
+.twocol .team-grid p {
+  font-family: "Proxima Nova", sans-serif;
+  font-size: calc(1.285rem + 0.65625vw);
+}
+@media (min-width: 768px) {
+  .twocol .team-grid p {
+    font-size: 1.6rem;
+  }
+}
 
 .entry-content .press {
   color: #222324;
@@ -1551,6 +1618,9 @@ table {
 }
 .entry-content .press h3 {
   margin-bottom: 1rem;
+}
+.entry-content .press p {
+  font-family: "Proxima Nova", sans-serif;
 }
 .entry-content .press .press-link {
   color: #222324;
@@ -1675,28 +1745,39 @@ table {
 
 .project-grid {
   display: grid;
-  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-columns: 33vw 33vw 33vw;
   grid-template-rows: max-content;
 }
 
 .grid-sizer {
-  width: 33.33%;
+  width: 32.5vw;
 }
 @media only screen and (max-width: 768px) {
   .grid-sizer {
-    width: 50%;
+    width: 49vw;
+  }
+}
+
+.gutter-sizer {
+  width: 1.25vw;
+}
+@media only screen and (max-width: 768px) {
+  .gutter-sizer {
+    width: 2vw;
   }
 }
 
 .project-grid-item {
-  width: 33.33%;
+  width: 32.5vw;
   float: left;
   height: 500px;
+  margin-bottom: 2rem;
 }
 @media only screen and (max-width: 768px) {
   .project-grid-item {
-    width: 50%;
+    width: 49vw;
     height: 300px;
+    margin-bottom: 1.6rem;
   }
 }
 .project-grid-item:nth-child(2) {
@@ -1741,11 +1822,17 @@ table {
 .project-image {
   position: relative;
   height: 100%;
-  min-height: 400px;
+  min-height: 500px;
   padding: 0;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media only screen and (max-width: 768px) {
+  .project-image {
+    min-height: 300px;
+    height: auto;
+  }
 }
 
 .single-project .project-gallery.grid {
@@ -1754,10 +1841,12 @@ table {
   -moz-column-gap: 1.6rem;
        column-gap: 1.6rem;
   row-gap: 2rem;
+  align-items: center;
 }
 @media only screen and (max-width: 768px) {
   .single-project .project-gallery.grid {
     grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.6rem;
   }
 }
 .single-project .project-gallery-item:nth-child(-n+3) {
@@ -1784,6 +1873,14 @@ table {
   grid-row: 2;
   grid-column: 2/span 2;
   padding: 5vw;
+}
+.single-project .project-info h1 {
+  letter-spacing: 0.2rem;
+}
+@media only screen and (max-width: 768px) {
+  .single-project .project-info {
+    padding: 2rem;
+  }
 }
 
 /*--------------------------------------------------------------

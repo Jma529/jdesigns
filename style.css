@@ -1754,7 +1754,7 @@ table {
 }
 @media only screen and (max-width: 768px) {
   .grid-sizer {
-    width: 49vw;
+    width: 48.5vw;
   }
 }
 
@@ -1763,7 +1763,7 @@ table {
 }
 @media only screen and (max-width: 768px) {
   .gutter-sizer {
-    width: 2vw;
+    width: 3vw;
   }
 }
 
@@ -1775,9 +1775,8 @@ table {
 }
 @media only screen and (max-width: 768px) {
   .project-grid-item {
-    width: 49vw;
+    width: 48.5vw;
     height: 300px;
-    margin-bottom: 1.6rem;
   }
 }
 .project-grid-item:nth-child(2) {

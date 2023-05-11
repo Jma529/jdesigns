@@ -15,7 +15,7 @@
   width: 32.5vw;
 
   @include breakpoint(sm) {
-    width: 49vw;
+    width: 48.5vw;
   }
 }
 
@@ -23,7 +23,7 @@
   width: 1.25vw;
 
   @include breakpoint(sm) {
-    width: 2vw;
+    width: 3vw;
   }
 }
 
@@ -34,9 +34,8 @@
   margin-bottom: 2rem;
 
   @include breakpoint(sm) {
-    width: 49vw;
+    width: 48.5vw;
     height: 300px;
-    margin-bottom: 1.6rem;
   }
 
   &:nth-child(2) {

@@ -60,6 +60,17 @@
 		}
 	}
 
+// Even columns on contact page
+	&.contact {
+		.grid {
+			grid-template-columns: 1fr 1fr;
+
+			@include breakpoint(sm) {
+				grid-template-columns: 1fr;
+			}
+		}	
+	}
+
 	.content {
 		text-align: left;
 		padding: 0;

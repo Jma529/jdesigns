@@ -1575,6 +1575,14 @@ table {
 .twocol .grid .row-2 {
   grid-row-start: 2;
 }
+.twocol.contact .grid {
+  grid-template-columns: 1fr 1fr;
+}
+@media only screen and (max-width: 768px) {
+  .twocol.contact .grid {
+    grid-template-columns: 1fr;
+  }
+}
 .twocol .content {
   text-align: left;
   padding: 0;

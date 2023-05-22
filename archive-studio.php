@@ -24,9 +24,9 @@ get_header();
 
 
 <main class="studio twocol">
-  <section>
-    <div class="wrapper-small">
-    <h1><?php the_title(); ?></h1>
+  <section class="padding">
+    <div class="wrapper">
+    <h1 class="page-header"><?php the_title(); ?></h1>
 		<hr>
       <div class="grid">
         <div class="col-1">

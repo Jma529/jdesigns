@@ -426,6 +426,7 @@ body {
   width: 100%;
   transition: transform 1s;
   font-size: calc(1.285rem + 0.65625vw);
+  overflow-x: hidden;
 }
 @media (min-width: 768px) {
   body {
@@ -516,16 +517,6 @@ h2, .h2 {
 @media only screen and (max-width: 992px) and (min-width: 768px) {
   h2, .h2 {
     font-size: 3rem;
-  }
-}
-@media only screen and (max-width: 768px) {
-  h2, .h2 {
-    font-size: calc(1.365rem + 2.15625vw);
-  }
-}
-@media only screen and (max-width: 768px) and (min-width: 768px) {
-  h2, .h2 {
-    font-size: 2.4rem;
   }
 }
 h2.big, .h2.big {
@@ -815,6 +806,14 @@ input[type=submit]:focus, .button:active, .button:focus {
   grid-column: 2;
   justify-content: center;
 }
+.site-footer .footer-col.site-logo .custom-logo-link {
+  width: 80px;
+}
+@media only screen and (max-width: 768px) {
+  .site-footer .footer-col.site-logo .custom-logo-link {
+    width: 60px;
+  }
+}
 .site-footer .footer-col.tagline {
   justify-content: flex-end;
 }
@@ -834,7 +833,7 @@ input[type=submit]:focus, .button:active, .button:focus {
   margin-right: 1rem;
 }
 #mc_embed_signup_scroll input {
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 .nf-after-field .nf-error-msg {
@@ -936,14 +935,13 @@ div.line-small {
 }
 @media only screen and (max-width: 576px) {
   .header .wrapper-small {
-    padding: 10px;
+    padding: 2rem;
   }
 }
 .header .header-left {
   display: flex;
   justify-content: flex-start;
   flex-grow: 1;
-  padding-left: 1rem;
 }
 .header .header-left a {
   align-self: center;

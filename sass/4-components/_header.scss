@@ -16,7 +16,7 @@
 		align-items: space-between;
     
     @include breakpoint(xs) {
-      padding: 10px;
+      padding: 2rem;
     }
   }
 
@@ -24,7 +24,6 @@
 		display: flex;
 		justify-content: flex-start;
 		flex-grow: 1;
-    padding-left: 1rem;
 		
 		a {
       align-self: center;

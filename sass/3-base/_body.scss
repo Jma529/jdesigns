@@ -3,6 +3,7 @@ body {
 	width: 100%;
 	transition: transform 1s;
 	@include font-size(1.6rem);
+	overflow-x: hidden;
 
 	&.slide-right {
 		transform: translateX(30vw);

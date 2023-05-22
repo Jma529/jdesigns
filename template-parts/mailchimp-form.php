@@ -3,7 +3,7 @@
     <form action="https://jinteriordesigns.us13.list-manage.com/subscribe/post?u=cd9e3bc9eafed67d380da0c3a&amp;id=c79f18d955&amp;f_id=007291e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div id="mc_embed_signup_scroll">
 <div class="mc-field-group">
-	<input type="email" value="ENTER EMAIL" name="EMAIL" class="required email" id="mce-EMAIL" required>
+	<input type="email" value="ENTER EMAIL" name="EMAIL" class="required email" id="mce-EMAIL" onfocus="this.value=''" required>
 	<span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
 </div>
 	<div id="mce-responses" class="clear foot">

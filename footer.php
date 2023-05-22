@@ -16,8 +16,7 @@
 			<div class="footer-content">
 				<div class="footer-top">
 					<div class="site-logo footer-col">
-					<a href="<?php echo get_home_url(); ?>" class="site-logo">
-						<img class="logo" src="<?php echo get_template_directory_uri(); ?>/media/jdesigns-logo-ruby.svg" alt="<?php bloginfo( 'name' ); ?>" />
+						<?php the_custom_logo();?>
 					</a>
 					</div>
 					<div class="footer-col tagline">

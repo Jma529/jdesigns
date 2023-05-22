@@ -88,6 +88,14 @@
 		&.site-logo {
 			grid-column: 2;
 			justify-content: center;
+
+			.custom-logo-link {
+				width: 80px;
+				
+				@include breakpoint(sm) {
+					width: 60px;
+				}
+			}
 		}
 
 		&.tagline {

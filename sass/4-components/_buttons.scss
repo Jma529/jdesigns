@@ -11,6 +11,7 @@ input[type="submit"], .button {
 		text-transform: uppercase;
 		font-family: $font__sans;
 		letter-spacing: .1rem;
+		border: none;
 	
 		&:hover {
 			color: #F7F4EB;

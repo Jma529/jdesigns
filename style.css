@@ -688,6 +688,7 @@ input[type=submit], .button {
   text-transform: uppercase;
   font-family: "Proxima Nova", sans-serif;
   letter-spacing: 0.1rem;
+  border: none;
 }
 @media (min-width: 768px) {
   button,

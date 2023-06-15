@@ -655,13 +655,11 @@ p.link-style {
 
 .labels {
   font-size: 1.2rem;
-  font-family: "Proxima Nova", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 .labels p {
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .form-fields {
@@ -1329,7 +1327,6 @@ input[type=datetime-local],
 input[type=color],
 textarea {
   color: #666;
-  font-family: "Proxima Nova", sans-serif;
   border: 1px solid #ccc;
   border-radius: 3px;
   padding: 3px;
@@ -1544,7 +1541,6 @@ table {
   flex-direction: column;
   justify-content: space-evenly;
   height: 30rem;
-  font-family: "Proxima Nova", sans-serif;
 }
 .twocol .grid .contact-info .location p {
   margin-bottom: 0;
@@ -1575,7 +1571,6 @@ table {
 }
 .twocol .content p {
   text-align: left;
-  font-family: "Proxima Nova", sans-serif;
 }
 .twocol .accent {
   display: flex;

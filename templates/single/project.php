@@ -27,13 +27,9 @@ $architect = get_field('architect');
       $caption= $image['caption']; //The caption
       $full_image_url= $image['full_image_url']; //Full size image url
       $thumbnail_image_url= $image['thumbnail_image_url']; //Get the thumbnail size image url 150px by 150px
-      $url= $image['url']; //Goto any link when clicked
-      $target= $image['target']; //Open normal or new tab
       echo "<div class='project-gallery-item'>
-      <a class='project-image' href='{$image->url}'>
-          <div class='project-image' style='background-image: url({$full_image_url})' target='$target'></div>
-      </a>
-      </div>";
+            <div class='project-image' style='background-image: url({$full_image_url})'></div>
+          </div>";
     if ($i == 0) { 
       ?>
       <div class="project-info grid">
@@ -41,7 +37,7 @@ $architect = get_field('architect');
         <p><?php the_content();?></p>
         <div class="labels">
           <?php if($location) : ?>
-            <p><?php echo $location ?></p>
+            <p>Location: <?php echo $location ?></p>
             <?php endif; ?>
 
           <?php if($photographer) : ?>

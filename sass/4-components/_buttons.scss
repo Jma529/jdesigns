@@ -4,24 +4,25 @@ input[type="reset"],
 input[type="submit"], .button {
 
 		@include font-size(1.4rem);
-		background-color: $color__text-black;
 		padding: 1rem 2rem;
-		color: #F7F4EB;
+		border: $color__text-black solid .5px;
+    background-color: transparent;
+    color: $color__text-black;
 		margin: 0;
 		text-transform: uppercase;
-		font-family: $font__sans;
+		font-family: $font__main;
 		letter-spacing: .1rem;
-		border: none;
+		cursor: pointer;
 	
-		&:hover {
-			color: #F7F4EB;
-			font-weight: bold;
-		}
+		// &:hover {
+		// 	color: #F7F4EB;
+		// 	font-weight: bold;
+		// }
 
-		&:active,
-		&:focus {
-			color: #F7F4EB;
-			font-weight: bold;
-		}
+		// &:active,
+		// &:focus {
+		// 	color: #F7F4EB;
+		// 	font-weight: bold;
+		// }
 	
 	}

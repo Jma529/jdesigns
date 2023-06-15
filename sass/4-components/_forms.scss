@@ -9,8 +9,10 @@
     margin-right: 1rem;
   }
 
-  input {
+  input[type=email] {
     padding: 1rem;
+    background-color: transparent;
+    border: $color__text-black solid .5px;
   }
  }
 

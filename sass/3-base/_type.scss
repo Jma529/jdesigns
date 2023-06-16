@@ -62,10 +62,6 @@ textarea {
 p {
   @include font-size(1.8rem);
 	margin-bottom: 1.5rem;
-
-  @include breakpoint(sm) {
-    @include font-size(1.6rem);
-  }
 }
 
 dfn,

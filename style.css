@@ -580,16 +580,6 @@ p {
     font-size: 1.8rem;
   }
 }
-@media only screen and (max-width: 768px) {
-  p {
-    font-size: calc(1.285rem + 0.65625vw);
-  }
-}
-@media only screen and (max-width: 768px) and (min-width: 768px) {
-  p {
-    font-size: 1.6rem;
-  }
-}
 
 dfn,
 cite,
@@ -1328,8 +1318,28 @@ input[type=color],
 textarea {
   color: #666;
   border: 1px solid #ccc;
-  border-radius: 3px;
   padding: 3px;
+  font-size: calc(1.265rem + 0.28125vw);
+}
+@media (min-width: 768px) {
+  input[type=text],
+  input[type=email],
+  input[type=url],
+  input[type=password],
+  input[type=search],
+  input[type=number],
+  input[type=tel],
+  input[type=range],
+  input[type=date],
+  input[type=month],
+  input[type=week],
+  input[type=time],
+  input[type=datetime],
+  input[type=datetime-local],
+  input[type=color],
+  textarea {
+    font-size: 1.4rem;
+  }
 }
 input[type=text]:focus,
 input[type=email]:focus,

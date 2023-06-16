@@ -25,7 +25,7 @@ get_header();
       <div class="grid">
         <div class="col-1">
           <div class="contact-info">
-            <a href="emailto<?php echo $email; ?>"><?php echo $email; ?></a>
+            <a href="<?php echo esc_url( 'mailto:' . antispambot( $email )  ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
             <a href="tel:<?php echo $tel; ?>"><?php echo $tel; ?></a>
             <div class="location">
               <?php echo $location_1 ?>

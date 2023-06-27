@@ -74,6 +74,11 @@
     align-items: flex-start;
     width: auto;
 
+		@include breakpoint(lg) {
+			justify-self: flex-start;
+			width: 100%;
+		}
+
 		@include breakpoint(sm) {
 			align-items: center;
 			margin-top: 2rem;

@@ -1,18 +1,38 @@
 // Mailchimp form
 
+#mc_embed_signup {
+  @include breakpoint(lg) {
+    width: 100%;
+  }
+
+}
+
 #mc_embed_signup_scroll
  {
   display: flex;
   align-items: center;
 
+  @include breakpoint(lg) {
+    width: 100%;
+  }
+
   .mc-field-group {
     margin-right: 1rem;
+
+    @include breakpoint(lg) {
+      flex-grow: 1;
+      width: 100%;
+    }
   }
 
   input[type=email] {
     padding: 1rem;
     background-color: transparent;
     border: $color__text-black solid .5px;
+
+    @include breakpoint(lg) {
+      width: 100%;
+    }
   }
  }
 

@@ -764,6 +764,12 @@ input[type=submit], .button {
   align-items: flex-start;
   width: auto;
 }
+@media only screen and (max-width: 1200px) {
+  .site-footer .form {
+    justify-self: flex-start;
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 768px) {
   .site-footer .form {
     align-items: center;
@@ -798,17 +804,39 @@ input[type=submit], .button {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  #mc_embed_signup {
+    width: 100%;
+  }
+}
+
 #mc_embed_signup_scroll {
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 1200px) {
+  #mc_embed_signup_scroll {
+    width: 100%;
+  }
+}
 #mc_embed_signup_scroll .mc-field-group {
   margin-right: 1rem;
+}
+@media only screen and (max-width: 1200px) {
+  #mc_embed_signup_scroll .mc-field-group {
+    flex-grow: 1;
+    width: 100%;
+  }
 }
 #mc_embed_signup_scroll input[type=email] {
   padding: 1rem;
   background-color: transparent;
   border: #222324 solid 0.5px;
+}
+@media only screen and (max-width: 1200px) {
+  #mc_embed_signup_scroll input[type=email] {
+    width: 100%;
+  }
 }
 
 .nf-after-field .nf-error-msg {

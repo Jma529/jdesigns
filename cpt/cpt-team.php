@@ -42,7 +42,7 @@ function jdesigns_the_studio_register_cpt() {
 		'label'                 => __( 'Team', 'text_domain' ),
 		'description'           => __( 'Post Type Description', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -53,7 +53,7 @@ function jdesigns_the_studio_register_cpt() {
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
-		'has_archive'           => true,
+		'has_archive'           => false,
 		'exclude_from_search'   => true,
 		'publicly_queryable'    => false,
 	);

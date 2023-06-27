@@ -1,8 +1,8 @@
  <?php
   $args = array(
     'post_type'         => JDESIGNS_PROJECT_CPT_NAME,
-    'orderby'           => 'date',
-    'order'             => 'DESC',
+    'orderby'           => 'menu_order',
+    'order'             => 'ASC',
     'posts_per_page'    => -1
   );
   $project = new WP_Query($args);
@@ -20,8 +20,6 @@
       
         $image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
         $link = get_permalink();
-        // $position = get_field('title');
-        // $description = get_field('description');
         
         ?>
         

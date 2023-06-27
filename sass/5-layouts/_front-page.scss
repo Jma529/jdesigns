@@ -1,6 +1,6 @@
 .section-image-cover {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 84px);
   padding: 0;
   background-position: center center;
   background-size: contain;
@@ -9,6 +9,7 @@
   @include breakpoint(sm) {
     height: auto;
     position: static;
+    background-size: contain;
   }
 }
 
@@ -38,6 +39,8 @@
     }
   }
 }
+
+
 
 .close {
   position: fixed;

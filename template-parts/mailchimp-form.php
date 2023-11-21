@@ -5,10 +5,11 @@
         method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
         novalidate>
         <div id="mc_embed_signup_scroll">
-            <div class="mc-field-group">
-                <input type="email" value="ENTER EMAIL" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="
+            <div class="mc-field-group flex">
+                <input type="email" value="EMAIL ADDRESS" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="
                     email" onfocus="this.value=''" required>
                 <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+
             </div>
             <div id="mce-responses" class="clear foot">
                 <div class="response" id="mce-error-response" style="display:none"></div>
@@ -18,8 +19,8 @@
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
                     name="b_cd9e3bc9eafed67d380da0c3a_c79f18d955" tabindex="-1" value=""></div>
             <div class="optionalParent">
-                <div class="clear foot">
-                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <div class="clear foot flex">
+                    <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="arrow">
                 </div>
             </div>
         </div>

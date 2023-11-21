@@ -10,8 +10,12 @@
 
 
 <?php if( $team -> have_posts() ): ?>
-
+  <div class="accent py">
+    <div class="line-small"></div>
+      <span>The Team</span>
+  </div>
     <div class="team-grid">
+  
       
       <?php while( $team -> have_posts() ) : $team -> the_post(); 
       

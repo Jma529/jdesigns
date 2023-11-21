@@ -53,6 +53,7 @@ function jdesigns_setup() {
 		array(
 			'main-menu' => 'Main menu',
 			'footer' => 'Footer menu',
+			'footer-bottom' => 'Footer bottom',
 		)
 	);
 

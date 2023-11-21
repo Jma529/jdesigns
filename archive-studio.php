@@ -26,8 +26,6 @@ get_header();
 <main class="studio twocol">
   <section class="padding">
     <div class="wrapper">
-    <h1 class="page-header"><?php the_title(); ?></h1>
-		<hr>
       <div class="grid">
         <div class="col-1">
           <div class="team-image" style="background-image: url('<?php echo $image ?>');"></div>
@@ -47,7 +45,7 @@ get_header();
         <div class="text-block">
           <div class="accent">
             <div class="line-small"></div>
-            <span>J Designs</span>
+            <span><?php echo the_title(); ?></span>
           </div>
           <div class="content"><?php the_content(); ?></div>
         </div>

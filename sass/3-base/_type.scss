@@ -27,6 +27,10 @@ h2, .h2 {
     @include font-size(3rem);
   }
 
+  &.no-margin {
+    margin-bottom: 0;
+  }
+
   &.big {
     @include font-size(4.8rem);
 
@@ -116,6 +120,14 @@ ins {
   color: #830715;
 }
 
+.italic {
+  font-style: italic;
+}
+
+.text-cap {
+  text-transform: capitalize;
+}
+
 nav {
   a {
   font-family: $font__nav;
@@ -125,6 +137,7 @@ nav {
 p {
 
   &.link-style {
+    font-size: (1.6rem);
     font-family: $font__nav;
     text-transform: uppercase;
   }

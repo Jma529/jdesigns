@@ -67,12 +67,24 @@
       &:nth-child(1) {
         padding: 10px 10px 10px 0;
       }
+
 			a {
 				display: block;
 				color: $color__nav;
 				text-decoration: none;
-				}
+
+        &:hover, &:focus {
+          text-decoration: underline;
+        }
 			}
+
+      &.current-menu-item {
+        a {
+          text-decoration: underline;
+        }
+      }
+			}
+    
 
 	}
 

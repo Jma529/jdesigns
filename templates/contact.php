@@ -19,7 +19,7 @@ get_header();
 
 <main id="primary" class="contact twocol">
   <section class="padding">
-    <div class="wrapper">
+  <div class="wrapper">
       <h1><?php the_title(); ?></h1>
       <hr>
       <div class="grid">

@@ -26,9 +26,9 @@
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-
-		&.small {
-			min-height: 40vh;
+		
+		@include breakpoint(sm) {
+			min-height: 60vh;
 		}
 		}
 
@@ -36,7 +36,17 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: space-evenly;
-			height: 30rem;
+			padding: 2rem 0;
+			gap: 2rem;
+
+			a {
+				text-decoration: none;
+				@include font-size(1.8rem);
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 
 			.location {
 				p {
@@ -83,8 +93,18 @@
 	.accent {
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
-			width: 10rem;
+			width: 18%;
+			font-size: 1.8rem;
+			gap: .75rem;
+
+			@include breakpoint(sm) {
+				width: 100%;
+			}
+
+			&.py {
+				padding: 20px 0 0 0;
+			}
+
 		}
 
 		.team-grid {
@@ -92,6 +112,10 @@
 			grid-template-columns: repeat(2, 1fr);
 			margin-top: 2rem;
 			grid-gap: 2rem;
+
+			@include breakpoint(sm) {
+				grid-template-columns: repeat(1, 1fr);
+			}
 
 			h3 {
 				margin-bottom: .5rem;
@@ -106,20 +130,24 @@
 
 	// Press styles
 
-	.entry-content {
-		.press {
-			color: $color__text-main;
+	section {
+		&.Press {
 
-			h2 {
-				font-weight: bold;
-				margin-bottom: .5rem;
-			}
+			.entry-content {
+				color: $color__text-main;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				gap: 2rem;
 
-			h3 {
-				margin-bottom: 1rem;
-			}
+				h2 {
+					font-weight: bold;
+					margin-bottom: .5rem;
+					color: $color__text-accent;
+				}
 
-			p {
+				p {
 				font-family: $font__sans;
 			}
 
@@ -127,8 +155,10 @@
 				color: $color__text-main;
 				margin-bottom: 1.5rem;
 			}
+
 			.bottom-margin {
 				margin-bottom: 3rem;
 			}
 		}
 	}
+}

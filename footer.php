@@ -11,48 +11,49 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="wrapper-small">
-			<div class="footer-content">
-				<div class="footer-top">
-					<div class="site-logo footer-col">
-						<?php the_custom_logo();?>
+<footer id="colophon" class="site-footer">
+		<div class="footer-content">
+			<div class="wrapper-small">
+			<div class="footer-top">
+				<div class="site-logo footer-col">
+					<?php the_custom_logo();?>
 					</a>
-					</div>
-					<div class="footer-col tagline">
-						<h3 class="h2 ruby">Intentional,<br> Effortless,<br> 
-						Designed For Living.</h3>
-					</div>
 				</div>
+			</div>
 			<hr>
+			<div class="footer-col tagline">
+					<h3 class="h2 ruby">Intentional, Effortless,
+						Designed For Living.</h3>
+				</div>
 			<div class="footer-bottom">
-				<nav class="footer-menu col">
-					<ul class="nav-menu">
-						<li>
-							<a href="#">Instagram</a>
-						</li>
-						<li>
-							<a href="#">Pinterest</a>
-						</li>
-						<li>
-							<a href="<?php echo get_permalink( get_page_by_path('contact') );?>">Contact</a>
-						</li>
-					</ul>
-				</nav>
+			<nav class="footer-menu col">
+					<?php
+                wp_nav_menu( array(
+                    'container'         => false,
+                    'theme_location'    => 'footer',
+                    'menu_class'        => 'nav-menu',
+                  )); 
+                ?> 
+				</nav> 
 				<div class="form col">
 					<p class="link-style">Stay in the know</p>
+					<!-- <p class="italic text-cap">Subscribe to our newsletter</p> -->
 					<?php get_template_part('template-parts/mailchimp-form'); ?>
 				</div>
 			</div>
 		</div>
-		</div>
+		<div class="footer-bar">
+			<div class="site-info">
+			<p>&copy 2023 J Designs</p>
+			</div>															
+			</div>
 	</div>
-						
 
-	</footer><!-- #colophon -->
-</div><!-- #page wrapper -->
+
+</footer><!-- #colophon -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

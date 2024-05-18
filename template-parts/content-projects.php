@@ -9,7 +9,9 @@
 ?>
 
 
-<?php if( $project -> have_posts() ): ?>
+<?php if( $project -> have_posts() ): 
+  $count = 2;
+  ?>
 
   <section class="section-projects">
     <div class="project-grid">
@@ -17,13 +19,13 @@
     <div class="gutter-sizer"></div>
       
       <?php while( $project -> have_posts() ) : $project -> the_post(); 
-      
+        $count++;
         $image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
         $link = get_permalink();
         
         ?>
         
-        <a href="<?php echo $link; ?>" class="project-grid-item <?php the_ID(); ?>">
+        <a href="<?php echo $link; ?>" class="project-grid-item <?php the_ID(); ?> project-<?= $count; ?>">
         <article>
           <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
           <div class="hover-content">

@@ -20,14 +20,14 @@ $architect = get_field('architect');
  if( count($images) ):
   //Cool, we got some data so now let's loop over it
   $i = 0;
-  foreach($images as $image):
+  foreach($images as $i => $image):
       $project_title = get_the_title();
       $id = $image['id']; // The attachment id of the media
       $title = $image['title']; //The title
       $caption= $image['caption']; //The caption
       $full_image_url= $image['full_image_url']; //Full size image url
       $thumbnail_image_url= $image['thumbnail_image_url']; //Get the thumbnail size image url 150px by 150px
-      echo "<div class='project-gallery-item'>
+      echo "<div class='project-gallery-item item-{'$i + 2'}'>
             <div class='project-image' style='background-image: url({$full_image_url})'></div>
           </div>";
     if ($i == 0) { 

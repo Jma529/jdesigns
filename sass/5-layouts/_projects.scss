@@ -61,7 +61,7 @@
     }
   } 
   
-  &:nth-child(5) {
+  &:nth-child(5), &:nth-child(6), &:nth-child(9), &:nth-child(14), &:nth-child(15), &:nth-child(18), &:nth-child(23), &:nth-child(24), &:nth-child(27) {
     height: 800px;
 
     @include breakpoint(sm) {
@@ -136,6 +136,7 @@
   }
   
   .project-gallery-item {
+    height: 100%;
 
     @include first(4) { 
       grid-column: span 1;
@@ -146,18 +147,18 @@
     }
 
     &:nth-child(6) {
-      grid-column: span 2;
+      grid-column: span 1;
     }
 
     &:nth-child(7) {
-      grid-column: span 1;
+      grid-column: span 2;
     }
 
     @include between(8, 10) {
       grid-column: span 1;
     }
 
-    &:nth-child(11) {
+    &:nth-child(11),  &:nth-child(17), &:nth-child(21), &:nth-child(28)  {
       grid-column: span 2;
     }
 

@@ -11,11 +11,6 @@
 
 	.footer-content {
 			width: 100%;
-			padding-top: 8rem;
-
-			@include breakpoint(sm) {
-				padding-top: 4rem;
-			}
 
 		.footer-top {
 			display: grid;

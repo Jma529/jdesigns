@@ -21,10 +21,6 @@
 				</div>
 			</div>
 			<hr>
-			<div class="footer-col tagline">
-					<h3 class="h2 ruby">Intentional, Effortless,
-						Designed For Living.</h3>
-				</div>
 			<div class="footer-bottom">
 			<nav class="footer-menu col">
 					<?php

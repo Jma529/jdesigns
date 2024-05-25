@@ -7,6 +7,7 @@ $location = get_field('location');
 $photographer = get_field('photographer');
 $builder = get_field('builder');
 $architect = get_field('architect');
+$stylist = get_field('stylist');
 
 
 ?>
@@ -16,9 +17,9 @@ $architect = get_field('architect');
 <div class="project-gallery grid">
   <?php
 
-//Check if return array has anything in it
+//Check if items
  if( count($images) ):
-  //Cool, we got some data so now let's loop over it
+  // Start loop
   $i = 0;
   foreach($images as $i => $image):
       $project_title = get_the_title();
@@ -44,12 +45,16 @@ $architect = get_field('architect');
             <p>Photography by: <?php echo $photographer; ?></p>
             <?php endif; ?>
             
-            <?php if($builder) : ?>
+            <?php if($architect) : ?>
             <p>Architecture by: <?php echo $architect; ?></p>
             <?php endif; ?>
 
           <?php if($builder) : ?>
             <p>Build by: <?php echo $builder ?></p>
+            <?php endif; ?>
+
+            <?php if($stylist) : ?>
+            <p>Stylist: <?php echo $stylist ?></p>
             <?php endif; ?>
 
         </div> 

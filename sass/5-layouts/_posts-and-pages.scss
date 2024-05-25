@@ -19,18 +19,52 @@
 			}
 		}
 
+		.hover-area {
+			min-height: 75vh;
+			position: relative;
+
+			@include breakpoint(sm) {
+				min-height: 60vh;
+			}
+
+			&:hover
+			.hover-content {
+				opacity: 100%;
+			}
+		}
+
 		.team-image {
-		position: relative;
-    min-height: 75vh;
-    padding: 0;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
+			position: relative;
+			min-height: 75vh;
+			padding: 0;
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
 		
-		@include breakpoint(sm) {
-			min-height: 60vh;
+			@include breakpoint(sm) {
+				min-height: 60vh;
+			}
+
 		}
+
+		.hover-content {	
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 10px 20px;
+				background-color: $color__background-body;
+				text-align: center;
+				opacity: 0;
+				transition: all .5s ease;
+				color: $color__text-main;
 		}
+
+
 
 		.contact-info {
 			display: flex;

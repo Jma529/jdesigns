@@ -1602,6 +1602,18 @@ table {
     grid-row-start: 1;
   }
 }
+.twocol .grid .hover-area {
+  min-height: 75vh;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .twocol .grid .hover-area {
+    min-height: 60vh;
+  }
+}
+.twocol .grid .hover-area:hover .hover-content {
+  opacity: 100%;
+}
 .twocol .grid .team-image {
   position: relative;
   min-height: 75vh;
@@ -1614,6 +1626,22 @@ table {
   .twocol .grid .team-image {
     min-height: 60vh;
   }
+}
+.twocol .grid .hover-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #F2EFEA;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+  color: #222324;
 }
 .twocol .grid .contact-info {
   display: flex;

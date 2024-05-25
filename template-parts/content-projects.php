@@ -25,7 +25,7 @@
         
         ?>
         
-        <a href="<?php echo $link; ?>" class="project-grid-item <?php the_ID(); ?> project-<?= $count; ?>">
+      <a href="<?php echo $link; ?>" class="project-grid-item <?php the_ID(); ?> project-<?= $count; ?>">
         <article>
           <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
           <div class="hover-content">
@@ -40,8 +40,3 @@
 </section>
 
 <?php endif; ?>
-
-
-
-
-

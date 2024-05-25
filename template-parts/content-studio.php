@@ -22,11 +22,19 @@
         $team_image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
         $link = get_permalink();
         $position = get_field('position');
+        $bio = get_the_content();
         
         ?>
   
         <article>
+          <div class="hover-area">
           <div class="team-image small" style="background-image: url('<?php echo $team_image ?>');"></div>
+          <?php if($bio) : ?>
+          <div class="hover-content">
+            <?= $bio; ?>
+          </div>
+          <?php endif; ?>
+          </div>
             <h3 class="bold"><?php the_title(); ?></h3>
             <p><?php echo $position; ?></p>
         </article>

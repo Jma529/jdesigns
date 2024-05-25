@@ -992,6 +992,9 @@ div.line-small {
     font-size: 3.6rem;
   }
 }
+.header .header-left a:hover {
+  opacity: 0.6;
+}
 .header .header-right {
   display: flex;
 }

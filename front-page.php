@@ -17,13 +17,13 @@ get_template_part('header-home');
     <?php
         //Get the images ids from the post_metadata
         $images = acf_photo_gallery('slide_gallery', $post->ID);
-        //Check if return array has anything in it
+        //Check if any items
         if( count($images) ):
-            //Cool, we got some data so now let's loop over it
+            // Start loop
           foreach($images as $image):
-            $id = $image['id']; // The attachment id of the media
-            $full_image_url= $image['full_image_url']; //Full size image url
-            $url= $image['url']; //Goto any link when clicked
+            $id = $image['id']; 
+            $full_image_url= $image['full_image_url']; 
+            $url= $image['url']; 
             $image_backup = get_the_post_thumbnail_url( get_the_ID(), 'full' );
       ?>
       <div class="section-image-cover">

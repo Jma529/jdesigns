@@ -32,6 +32,10 @@
 			text-decoration: none;
       @include font-size(3.6rem);
       letter-spacing: .5rem;
+
+      &:hover {
+        opacity: .6;
+      }
 		}
 	}
 	

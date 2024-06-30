@@ -3,18 +3,55 @@
 }
 
 .text-block {
-  background-color: $color__background-footer-dark;
+  background-color: $color__background-footer;
   width: 100%;
   padding: 5vw;
+  color: $color__text-main-inverse;
+}
+
+.text-light {
+  color: $color__text-main-inverse;
+}
+
+.text-dark {
+  color: $color__text-main;
 }
 
 
  div {
   &.line-small {
     width: 30px;
-    background-color: $color__backgroud-black;
+    background-color: $color__text-main-inverse;
     height: .2px;
     margin-bottom: 0;
     margin-left: 5px;
   }
+}
+
+.logo {
+  align-self: center;
+  text-transform: uppercase;
+  color: $color__nav;
+  text-decoration: none;
+  @include font-size(3.6rem);
+  letter-spacing: .5rem;
+
+  &:hover {
+    opacity: .6;
+  }
+
+  &.lg {
+    @include font-size(6.4rem);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    @include breakpoint(md) {
+      font-size: 40px;
+      white-space: nowrap;
+    }
+  
+  }
+
 }

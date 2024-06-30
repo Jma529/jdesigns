@@ -1,6 +1,6 @@
 .header {
 	position: fixed;
-  top: 0;
+  top: 10px;
 	width: 100%;
 	z-index: 9999;
 	background-color: $color__background-body;
@@ -12,35 +12,41 @@
 	}
 
   .wrapper-small {
-    display: flex;
-		align-items: space-between;
+    display: grid;
+    grid-template-columns: 33vw 33vw 33vw;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
     
     @include breakpoint(xs) {
       padding: 2rem;
+      display: flex;
+      justify-content: space-between;
     }
   }
 
 	.header-left {
 		display: flex;
-		justify-content: flex-start;
-		flex-grow: 1;
-		
-		a {
-      align-self: center;
-			text-transform: uppercase;
-			color: $color__nav;
-			text-decoration: none;
-      @include font-size(3.6rem);
-      letter-spacing: .5rem;
+    padding-left: 5vw;
+    justify-self: flex-start;
 
-      &:hover {
-        opacity: .6;
-      }
-		}
+    @include breakpoint(xs) {
+      padding: 0;
+    }
 	}
-	
+
+  .logo {
+    justify-self: center;
+  }
+
 		.header-right {
 			display: flex;
+      padding-right: 5vw;
+      justify-self: flex-end;
+
+      @include breakpoint(xs) {
+        padding: 0;
+      }
 		}
 
 	.site-tools {
@@ -64,30 +70,57 @@
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
+    gap: 60px;
 
-		li {
-			padding: 10px;
 
-      &:nth-child(1) {
-        padding: 10px 10px 10px 0;
-      }
+		.menu-item {
+      list-style: none;
+      padding: 10px 0;
 
 			a {
 				display: block;
 				color: $color__nav;
 				text-decoration: none;
+        letter-spacing: 4px;
 
-        &:hover, &:focus {
-          text-decoration: underline;
-        }
 			}
 
       &.current-menu-item {
         a {
-          text-decoration: underline;
+          font-weight: bold;
         }
       }
-			}
+
+      /* Sub menu */
+
+      &.menu-item-has-children {
+        position: relative;
+        padding-left: 0;
+
+        .sub-menu {
+          display: none;
+          flex-direction: column;
+          padding: 30px 20px;
+          background-color: $color__background-body;
+          color: $color__nav;
+          position: absolute;
+          top: 30px;
+          left: 0;
+          margin-left: 0;
+          gap: 10px;
+
+          li {
+            padding: 0;
+          }
+        }
+
+        &:hover, &:active {
+          .sub-menu {
+            display: flex;
+          }
+        }
+      }
+		}
     
 
 	}

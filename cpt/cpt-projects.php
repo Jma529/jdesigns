@@ -41,7 +41,7 @@ function jdesigns_projects_register_cpt() {
 		'label'                 => __( 'Project', 'text_domain' ),
 		'description'           => __( 'Post Type Description', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'revisions' ),
 		'taxonomies'            => array( 'category', 'post_tag' ),
 		'hierarchical'          => false,
 		'public'                => true,

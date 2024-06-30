@@ -1,23 +1,48 @@
-//Studio Template
+// Studio Template
 
 .twocol {
 	.grid {
 		display: grid;
-		grid-template-columns: 1fr 2fr;
-		grid-template-rows: auto;
-		grid-gap: 4rem;
+		grid-template-columns: repeat(12, 1fr);
+		gap: 40px;
 
 		@include breakpoint(sm) {
 			grid-template-columns: 1fr;
 		}
+
+		.row-1 {
+			grid-row-start: 1;
+		}
+
+		.row-2 {
+			grid-row-start: 2;
+		}
+
 	
-		.col-1 {
-			grid-column-start: 1;
+		.item-1 {
+			grid-column: 1 / 5;
+			height: 100%;
 
 			@include breakpoint(sm) {
 				grid-row-start: 1;
 			}
 		}
+
+
+		.item-2 {
+			grid-column: 5 / full;
+
+			@include breakpoint(sm) {
+				grid-column-start: 1;
+			}
+
+		}
+
+		.item-3 {
+			grid-column: 1 / 6;
+		}
+
+	}
 
 		.hover-area {
 			min-height: 75vh;
@@ -27,7 +52,12 @@
 				min-height: 60vh;
 			}
 
-			&:hover, &:active
+			&:hover
+			.hover-content {
+				opacity: 100%;
+			}
+
+			&:active
 			.hover-content {
 				opacity: 100%;
 			}
@@ -40,6 +70,7 @@
 			background-position: center center;
 			background-size: cover;
 			background-repeat: no-repeat;
+			height: 100%;
 		
 			@include breakpoint(sm) {
 				min-height: 60vh;
@@ -89,19 +120,16 @@
 			}
 		}
 
+		.text-block {
+			a {
+				color: $color__text-main-inverse;
 
-		.col-2 {
-			grid-column-start: 2;
-
-			@include breakpoint(sm) {
-				grid-column-start: 1;
+				&:hover, &:visited {
+					color: $color__link-hover;
+				}
 			}
+		}
 
-		}
-		.row-2 {
-			grid-row-start: 2;
-		}
-	}
 
 // Even columns on contact page
 	&.contact {

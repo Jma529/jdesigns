@@ -3,7 +3,7 @@ jQuery(document).ready(function () {
   // Slick Slider, single slide automatic
 
   $(".front-page-slider").slick({
-    autoplay: true,
+    autoplay: false,
     slidesToScroll: 1,
     infinite: true,
     prevArrow: '<i class="fas fa-chevron-left"></i>',

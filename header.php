@@ -28,25 +28,32 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#"><?php esc_html_e( 'Skip to content', 'jdesigns' ); ?></a>
     <header class="header">
-      <div class="wrapper-small">
-            <div class="header-left">
-              <a href="<?php echo get_home_url(); ?>">
-              J Designs
-              </a>
-            </div>
-
-            <div class="header-right">
-
-              <nav class="header-menu">
-                <?php
+      <nav class="wrapper-small">
+            <div class="header-left header-menu">
+            <?php
                   wp_nav_menu( array(
                     'container'         => false,
-                    'theme_location'    => 'main-menu',
+                    'theme_location'    => 'header-left',
                     'menu_class'        => 'nav-menu',
                   ));
                 ?>
-              </nav>
+            </div>
+            <div class="logo">     
+              <a class="logo" href="<?php echo get_home_url(); ?>">
+              J Designs
+              </a>
+                </div>
 
+            <div class="header-right  header-menu">
+
+                <?php
+                  wp_nav_menu( array(
+                    'container'         => false,
+                    'theme_location'    => 'header-right',
+                    'menu_class'        => 'nav-menu',
+                  ));
+                ?>
+              </div>
               <div class="site-tools">
                 <!-- <button class="mobile-menu-trigger" title="Mobile Menu">
                   <span class="screen-reader-text">Mobile Menu</span> -->
@@ -70,10 +77,8 @@
                 <!-- </button> -->
               </div>
       
-
-            </div>
             
-    </div>
+    </nav>
   </header>
 
  

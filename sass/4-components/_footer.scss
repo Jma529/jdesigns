@@ -68,15 +68,18 @@
 
   .nav-menu {
 		display: flex;
-		flex-direction: column;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 		gap: 1rem;
 
+		@include breakpoint(sm) {
+			flex-direction: column;
+		}
+
 			a {
 				display: block;
-				color: $color__text-main;
+				color: $color__text-main-inverse;
 				text-decoration: none;
 				font-size: 1.6rem;
 

@@ -1,4 +1,4 @@
-<?php
+ <?php
 /**
  * The template for displaying the footer
  *
@@ -14,13 +14,14 @@
 <footer id="colophon" class="site-footer">
 		<div class="footer-content">
 			<div class="wrapper-small">
+			<!-- Remove
 			<div class="footer-top">
 				<div class="site-logo footer-col">
-					<?php the_custom_logo();?>
+					<?php #the_custom_logo();?>
 					</a>
-				</div>
 			</div>
-			<hr>
+			</div>  
+			<hr> -->
 			<div class="footer-bottom">
 			<nav class="footer-menu col">
 					<?php
@@ -32,17 +33,17 @@
                 ?> 
 				</nav> 
 				<div class="form col">
-					<p class="link-style">Stay in the know</p>
+					<p class="link-style text-light">Stay in the know</p>
 					<!-- <p class="italic text-cap">Subscribe to our newsletter</p> -->
 					<?php get_template_part('template-parts/mailchimp-form'); ?>
 				</div>
 			</div>
 		</div>
-		<div class="footer-bar">
+		<!-- <div class="footer-bar">
 			<div class="site-info">
 			<p>&copy 2023 J Designs</p>
 			</div>															
-			</div>
+			</div> -->
 	</div>
 
 

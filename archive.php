@@ -24,23 +24,46 @@ if( is_post_type_archive( JDESIGNS_PROJECT_CPT_NAME ) ) :
 
 	elseif( is_post_type_archive( JDESIGNS_TEAM_CPT_NAME ) ) : 
 
-		get_template_part('template-parts/archive/studio');
+		get_template_part('template-parts/content-studio');
+
+		// elseif( is_post_type_archive('press' ) ) : 
+
+		// 	get_template_part('template-parts/press');
 		
 
 	
 // For everything else, create a standard archive layout with a post list
 
 
-else :
+	else : ?>
+		<section class="padding">
+			<div class="wrapper">
+			<?php if ( have_posts() ) : ?>
 
-			get_template_part( 'template-parts/content', 'none' );
-			
-			?>
-			
 
-<?php endif; ?>
+		<div class="posts-list">
 
-</main>
+			<?php while ( have_posts() ) : the_post();
+
+				get_template_part( 'template-parts/content' );
+
+			endwhile; ?>
+
+		</div>
+
+		<?php else: 
+
+		get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
+
+				
+	<?php endif; ?>
+	
+		</div>
+	</section>
+
+	</main>
 
 <?php
 

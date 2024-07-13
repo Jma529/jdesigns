@@ -1848,6 +1848,23 @@ section.Press .entry-content .bottom-margin {
   margin-bottom: 3rem;
 }
 
+.post-type-archive-press .posts-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+.post-type-archive-press .posts-list .entry-title {
+  font-size: calc(1.375rem + 2.34375vw);
+}
+@media (min-width: 768px) {
+  .post-type-archive-press .posts-list .entry-title {
+    font-size: 2.5rem;
+  }
+}
+.post-type-archive-press .posts-list a {
+  text-decoration: none;
+}
+
 .section-image-cover {
   position: relative;
   height: 100vh;

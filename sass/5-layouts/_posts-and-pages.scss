@@ -223,3 +223,19 @@
 		}
 	}
 }
+
+.post-type-archive-press {
+	.posts-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		justify-items: center;
+
+		.entry-title {
+			@include font-size(2.5rem);
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+}

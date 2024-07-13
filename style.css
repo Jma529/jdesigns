@@ -1023,7 +1023,7 @@ div.line-small {
   justify-content: center;
   padding: 10px 0;
 }
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .header .wrapper-small {
     padding: 2rem;
     display: flex;
@@ -2042,12 +2042,28 @@ body.home .header-left a {
   z-index: 99;
   font-size: 40px;
   color: #830715;
+  cursor: pointer;
 }
 .slick-slider .slick-arrow.fa-chevron-left {
   left: 10px;
 }
 .slick-slider .slick-arrow.fa-chevron-right {
   right: 10px;
+}
+
+.section-projects .filters {
+  display: flex;
+  gap: 10px;
+  padding: 15px 0;
+  justify-content: center;
+}
+.section-projects .filters .button {
+  letter-spacing: 4px;
+}
+.section-projects .filters .button.is-checked {
+  background-color: #830715;
+  color: white;
+  border-color: #830715;
 }
 
 .project-grid {

@@ -12,16 +12,16 @@
 	}
 
   .wrapper-small {
-    display: grid;
-    grid-template-columns: 33vw 33vw 33vw;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0;
+      display: grid;
+      grid-template-columns: 33vw 33vw 33vw;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
     
-    @include breakpoint(xs) {
-      padding: 2rem;
-      display: flex;
-      justify-content: space-between;
+      @include breakpoint(sm) {
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
     }
   }
 

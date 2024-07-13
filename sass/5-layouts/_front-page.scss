@@ -211,6 +211,7 @@ body.home {
     z-index: 99;
     font-size: 40px;
     color: $color__text-accent;
+    cursor: pointer;
 
     &.fa-chevron-left {
       left: 10px;

@@ -14,6 +14,12 @@
   ?>
 
   <section class="section-projects">
+    <div class="filters">
+      <button class="button is-checked" data-filter="*">All</button>
+      <button class="button" data-filter=".residential">Residential</button>
+      <button class="button" data-filter=".commercial">Commercial</button>
+      <!-- <button class="button" data-filter=".hospitality">Hospitality</button> -->
+    </div>
     <div class="project-grid">
     <div class="grid-sizer"></div> 
     <div class="gutter-sizer"></div>
@@ -22,10 +28,16 @@
         $count++;
         $image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
         $link = get_permalink();
+        $categories = get_the_category();
+
+        if ( ! empty( $categories ) ) {
+          foreach ( $categories as $cat ) {
+              $cats = $cat->slug;
+          }
+        }
+?>
         
-        ?>
-        
-      <a href="<?php echo $link; ?>" class="project-grid-item <?php the_ID(); ?> project-<?= $count; ?>">
+      <a href="<?php echo $link; ?>" class="project-grid-item <?php the_ID(); ?> project-<?= $count; ?> <?= $cats; ?>">
         <article>
           <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
           <div class="hover-content">

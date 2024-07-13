@@ -154,6 +154,9 @@ function jdesigns_scripts() {
 
 	wp_register_script('masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array('jquery'), '1.0.0');
 	wp_enqueue_script('masonry');
+
+	wp_register_script('isotope',  get_stylesheet_directory_uri() . '/node_modules/isotope-layout/dist/isotope.pkgd.min.js', array('jquery'), '1.0.0');
+	wp_enqueue_script('isotope');
 	
 	
 	wp_enqueue_style( 'jdesigns-style', get_stylesheet_uri(), array(), THEME_VERSION, 'all' );

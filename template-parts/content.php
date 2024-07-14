@@ -13,16 +13,20 @@
 
 // Variables 
 
-$link = get_field('press_link'); ?>
+$link = get_field('press_link'); 
+$featured = get_field('featured_snippet');
+
+
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
-		if ( is_singular() ) :
+		#if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="h1 entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+		#else :
+			#the_title( '<h2 class="h1 entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		#endif;
 
 		if ( 'post' === get_post_type() ) :
 			?>
@@ -36,7 +40,10 @@ $link = get_field('press_link'); ?>
 	</header><!-- .entry-header -->
 	<p><?= the_excerpt(); ?></p>
 	<?php jdesigns_post_thumbnail(); ?>
-	<a class=="link" href="<?= $link; ?>">Read more</a>
+	<?php if (!empty($featured)) : ?>
+		<p class="featured"><?= $featured; ?></p>
+	<?php endif; ?>
+	<a class="button link" href="<?= $link; ?>">Read Story</a>
 
 	<div class="entry-content">
 		<?php

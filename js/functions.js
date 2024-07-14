@@ -65,3 +65,16 @@ function onHashchange() {
 $(window).on( 'hashchange', onHashchange );
 // trigger event handler to init Isotope
 onHashchange();
+
+// Remove empty p tags
+
+$('p:empty').remove();
+
+// Open mobile menu 
+
+$('.main-menu-mobile .dropdown-arrow').click(function() {
+  $('.sub-menu').toggleClass('active');
+  $('.dropdown-arrow').toggleClass('rotate');
+  console.log('I work!');
+});
+

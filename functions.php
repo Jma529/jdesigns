@@ -207,4 +207,32 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* Change Order by on Press Archive */
 
+// Add the callback to the posts_orderby filter
+add_filter('posts_orderby', 'orderby_pages_callback', 10, 2);
+
+// The posts_orderby filter
+function orderby_pages_callback($orderby_statement, $wp_query) {
+	# Verify correct post type, or any other query variable
+	if ($wp_query->get("post_type") === "press") {
+		// Add a reverse menu order sort
+		return "wp_posts.menu_order ASC";
+	} else {
+		# Use provided statement instead 
+		return $orderby_statement;
+	}
+}
+
+/* Add caret to dropdown menu */
+
+function dropdown_arrow($item_output, $item, $depth, $args) {
+	if (in_array('menu-item-has-children', $item->classes)) {
+			$arrow = '<svg class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="9" fill="currentColor">
+			<path fill="currentColor" d="m15.715 1.564-6.99 6.99a.524.524 0 0 1-.74 0L.996 1.563a.524.524 0 0 1 .74-.74l6.62 6.617L14.973.823a.524.524 0 0 1 .74.741Z"/>
+		</svg>'; 
+			$item_output = str_replace('</a>', '</a>'. $arrow .'', $item_output);
+	}
+	return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'dropdown_arrow', 10, 4);

@@ -229,13 +229,40 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		justify-items: center;
+		gap: 30px;
 
-		.entry-title {
-			@include font-size(2.5rem);
+		@include breakpoint(sm) {
+			grid-template-columns: 1fr;
+			gap: 50px;
 		}
 
-		a {
+		article {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			text-align: center;
+
+			@include breakpoint(sm) {
+				gap: 0;
+			}
+
+			.featured {
+				text-transform: uppercase;
+				letter-spacing: 6px;
+				@include font-size(1.4rem);
+			}
+		}
+
+		.entry-title {
+			@include font-size(3.5rem);
+			letter-spacing: 1px;
+		}
+
+		.button {
 			text-decoration: none;
+			border: none;
+			letter-spacing: 2px;
+			@include font-size(2rem);
 		}
 	}
 }

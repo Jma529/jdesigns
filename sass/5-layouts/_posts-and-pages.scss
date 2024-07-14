@@ -4,10 +4,11 @@
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		gap: 40px;
+		gap: 30px;
 
 		@include breakpoint(sm) {
-			grid-template-columns: 1fr;
+			display: flex;
+			flex-direction: column;
 		}
 
 		.row-1 {
@@ -39,7 +40,25 @@
 		}
 
 		.item-3 {
-			grid-column: 1 / 6;
+			grid-column: 1 / 9;
+
+			@include breakpoint(sm) {
+				order: 4;
+			}
+		}
+
+		.item-4 {
+			grid-column: 9 / full;
+
+			@include breakpoint(sm) {
+				order: 3;
+			}
+		}
+
+		.tagline {
+			@include font-size(2.4rem);
+			letter-spacing: 5px;
+			margin-bottom: 0;
 		}
 
 	}
@@ -121,6 +140,20 @@
 		}
 
 		.text-block {
+			height: 100%;
+			
+			.content {
+				max-width: 85%;
+
+				@include breakpoint(xl) {
+					max-width: none;
+				}
+				
+			}
+
+			@include breakpoint(sm) {
+				height: auto;
+			}
 			a {
 				color: $color__text-main-inverse;
 

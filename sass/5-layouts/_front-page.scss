@@ -21,6 +21,19 @@
     // background: linear-gradient(105.43deg, rgba(217, 217, 217, 0.06) -13.11%, rgba(0, 0, 0, 0.42) 60.81%);
     background: linear-gradient(105.43deg, rgba(217, 217, 217, .10) -59.11%, rgba(0, 0, 0, 0.3) 60.81%);
   }
+
+  .link {
+    @include font-size(3rem);
+    color: white;
+    letter-spacing: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    @include breakpoint(md) {
+      @include font-size(2rem);
+    }
+  }
+
 }
 
 .relative {
@@ -80,23 +93,7 @@
   footer {
     display: none;
   }
-
-  .hero-content {
-    .link {
-      @include font-size(3rem);
-      color: white;
-      letter-spacing: 18px;
-      text-transform: uppercase;
-      text-decoration: none;
-
-      @include breakpoint(md) {
-        @include font-size(2rem);
-      }
-    }
-
-  }
 }
-
 
 .close {
   position: fixed;

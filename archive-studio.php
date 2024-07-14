@@ -43,7 +43,7 @@ get_header();
           <div class="text-block bg-dark">
             <div class="accent">
               <div class="line-small"></div>
-              <span>STUDIO</span>
+              <p class="tagline">STUDIO</p>
             </div>
             <div class="content"><?php the_content(); ?></div>
           </div>
@@ -52,17 +52,18 @@ get_header();
           <div class="text-block bg-dark">
             <div class="accent">
               <div class="line-small"></div>
-              <span>ABOUT J</span>
+              <p class="tagline">ABOUT J</p>
             </div>
-            <div class="content"><p>Founded by Jamie Nusser, J Designs has studios in Los Angeles + Denver. We are a full-service, multi-disciplinary design studio specializing in residential + boutique commercial properties. We aim to be a place where creativity flourishes. We feel deeply that well designed, healthy interiors are key to a balanced life + have the power to positively affect the people who live in + experience them. Each day should be lived in interiors that give you energy + allow you to thrive. We are experts at getting to know our clients + understanding their unique style, so that we can create architecturally grounded interiors with project-specific products + playful elevated details that enhance wellbeing.</p>
-</div>
+            <div class="content">
+              <?= get_field('about_j_bio'); ?>
+            </div>
           </div>
         </div>
-      </div>
+      
           
           <?php if ( have_posts() ) : ?>
 
-          <div class="posts-list">
+          <div class="posts-list item-4 row-2">
 
             <?php while ( have_posts() ) : the_post();
 
@@ -77,10 +78,11 @@ get_header();
           get_template_part( 'template-parts/content', 'none' );
 
           endif; ?>
+        </div> 
     </div>
 </section>
 
-
+<?php get_template_part('template-parts/call-to-action'); ?>
 
 </main>
 

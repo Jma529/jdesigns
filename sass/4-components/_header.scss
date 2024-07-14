@@ -143,7 +143,7 @@
 .mobile-nav {
   position: fixed;
   right: 0;
-  top: 0;
+  top: 120px;
   height: 100vh;
   width: 100vw;
   transform: translate(100vw, 0);
@@ -151,7 +151,6 @@
   -ms-transform: translatex(-100vw);
   box-sizing: border-box;
   pointer-events: none;
-  padding-top: 125px;
   transition: width 475ms ease-out, transform 450ms ease, border-radius .8s .1s ease;
 	background-color: $color__background-body;
 	opacity: .8;
@@ -181,7 +180,7 @@
     &.active {
       // display: block;
       opacity: 1;
-      height: 100%;
+      height: 125px;
     }
 
   }
@@ -198,28 +197,22 @@
     -ms-transform: translatex(-100vw);
 
     &.menu-item-has-children { 
-
       .sub-menu {
-        background-color: $color__background-footer;
-
-        a {
-          color: $color__text-main-inverse;
-        }
+        border-top: 1px solid $color__background-footer;
+        border-bottom: 1px solid $color__background-footer;
       }
 
       .dropdown-arrow {
+        @include breakpoint(sm) {
+          position: absolute;
+          top: 15px;
+        }
         &.rotate {
           transform: rotate(180deg);
         }
       }
-    
     }
-    
-    // &:last-child {
-    //   margin-bottom: 2em;
-    // }
-
-    }
+  }
     a {
       text-decoration: none;
       color: $color__text-main;

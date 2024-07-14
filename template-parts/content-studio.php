@@ -10,13 +10,7 @@
 
 
 <?php if( $team -> have_posts() ): ?>
-  <div class="accent py">
-    <div class="line-small"></div>
-      <span>The Team</span>
-  </div>
-    <div class="team-grid">
-  
-      
+
       <?php while( $team -> have_posts() ) : $team -> the_post(); 
       
         $team_image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
@@ -26,21 +20,9 @@
         
         ?>
   
-        <article>
-          <div class="hover-area">
           <div class="team-image small" style="background-image: url('<?php echo $team_image ?>');"></div>
-          <?php if($bio) : ?>
-          <div class="hover-content">
-            <?= $bio; ?>
-          </div>
-          <?php endif; ?>
-          </div>
-            <h3 class="bold"><?php the_title(); ?></h3>
-            <p><?php echo $position; ?></p>
-        </article>
     
       <?php endwhile; wp_reset_postdata(); ?>
-
 
 <?php endif; ?>
 

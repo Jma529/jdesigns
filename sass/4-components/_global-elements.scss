@@ -5,7 +5,7 @@
 .text-block {
   background-color: $color__background-footer;
   width: 100%;
-  padding: 5vw;
+  padding: 30px 48px;
   color: $color__text-main-inverse;
 }
 
@@ -54,4 +54,34 @@
   
   }
 
+}
+
+.section-image-cover {
+
+&.cta {
+  height: 60vh;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .link {
+    @include font-size(2rem);
+  }
+
+  .overlay {
+    background: linear-gradient(105.43deg, rgba(217, 217, 217, 0.1) -59.11%, rgba(0, 0, 0, 0.6) 60.81%);
+  }
+
+  .hero-content {
+    width: 100%;
+
+    @include breakpoint(md) {
+      top: 50%;
+      padding: 0 20px;
+    }
+  }
+}
 }

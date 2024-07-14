@@ -1825,7 +1825,6 @@ table {
   flex-direction: column;
   justify-content: space-evenly;
   padding: 2rem 0;
-  gap: 2rem;
 }
 .twocol .contact-info a {
   text-decoration: none;
@@ -1838,6 +1837,9 @@ table {
 }
 .twocol .contact-info a:hover {
   text-decoration: underline;
+}
+.twocol .contact-info .location {
+  margin-top: 20px;
 }
 .twocol .contact-info .location p {
   margin-bottom: 0;
@@ -1865,11 +1867,29 @@ table {
   color: #830715;
 }
 .twocol.contact .grid {
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 9fr;
+}
+.twocol.contact .large {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.twocol.contact .item-1 {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.twocol.contact .item-2 {
+  grid-column: 2/full;
+}
+.twocol.contact .item-2 img {
+  width: 100%;
+  object-fit: cover;
+  height: 70vh;
 }
 @media only screen and (max-width: 768px) {
-  .twocol.contact .grid {
-    grid-template-columns: 1fr;
+  .twocol.contact .item-2 img {
+    height: auto;
   }
 }
 .twocol .content {

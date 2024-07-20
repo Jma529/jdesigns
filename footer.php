@@ -17,7 +17,7 @@
 			<!-- Remove
 			<div class="footer-top">
 				<div class="site-logo footer-col">
-					<?php #the_custom_logo();?>
+					<?php the_custom_logo(); ?>
 					</a>
 			</div>
 			</div>  
@@ -32,6 +32,7 @@
                   )); 
                 ?> 
 				</nav> 
+				<div class="col logo-center"><img src="<?= get_stylesheet_directory_uri() . '/Media/jdesigns-icon-black.svg'; ?>"/></div>
 				<div class="form col">
 					<p class="link-style text-light">Stay in the know</p>
 					<!-- <p class="italic text-cap">Subscribe to our newsletter</p> -->

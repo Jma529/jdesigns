@@ -155,7 +155,7 @@ function jdesigns_scripts() {
 	wp_register_script('masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js', array('jquery'), '1.0.0');
 	wp_enqueue_script('masonry');
 
-	wp_register_script('isotope',  get_stylesheet_directory_uri() . '/node_modules/isotope-layout/dist/isotope.pkgd.min.js', array('jquery'), '1.0.0');
+	wp_register_script('isotope',  'https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js', array('jquery'), '1.0.0');
 	wp_enqueue_script('isotope');
 	
 	
@@ -236,3 +236,7 @@ function dropdown_arrow($item_output, $item, $depth, $args) {
 	return $item_output;
 }
 add_filter('walker_nav_menu_start_el', 'dropdown_arrow', 10, 4);
+
+/* Remove gutenberg editor */ 
+
+add_filter('use_block_editor_for_post', '__return_false', 10);

@@ -197,10 +197,6 @@
     -ms-transform: translatex(-100vw);
 
     &.menu-item-has-children { 
-      .sub-menu {
-        border-top: 1px solid $color__background-footer;
-        border-bottom: 1px solid $color__background-footer;
-      }
 
       .dropdown-arrow {
         @include breakpoint(sm) {

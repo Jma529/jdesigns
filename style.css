@@ -552,6 +552,10 @@ h3, .h3 {
   }
 }
 
+.label {
+  letter-spacing: 10%;
+}
+
 body,
 button,
 input,
@@ -575,12 +579,12 @@ textarea {
 }
 
 p {
-  font-size: calc(1.305rem + 1.03125vw);
+  font-size: calc(1.285rem + 0.65625vw);
   margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
   p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
@@ -641,7 +645,7 @@ ins {
 }
 
 .text-cap {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 nav a {
@@ -671,6 +675,18 @@ p.link-style {
 
 strong, .bold {
   font-weight: 800;
+}
+
+.lspace-sm {
+  letter-spacing: 2px !important;
+}
+
+.lspace-md {
+  letter-spacing: 4px !important;
+}
+
+.lspace-lg {
+  letter-spacing: 6px !important;
 }
 
 /*--------------------------------------------------------------
@@ -755,6 +771,9 @@ input[type=submit], .button {
     margin-top: 2rem;
     text-align: center;
   }
+}
+.site-footer .footer-content .footer-bottom .logo-center {
+  justify-self: center;
 }
 .site-footer .footer-content .footer-bar {
   background-color: #DED6C9;
@@ -947,7 +966,6 @@ input[type=submit], .button {
 .text-block {
   background-color: #222324;
   width: 100%;
-  padding: 30px 48px;
   color: #F2EFEA;
 }
 
@@ -1198,10 +1216,6 @@ div.line-small {
   transform: translatex(100vw);
   /* ie workaround */
   -ms-transform: translatex(-100vw);
-}
-.header .mobile-nav li.menu-item-has-children .sub-menu {
-  border-top: 1px solid #222324;
-  border-bottom: 1px solid #222324;
 }
 @media only screen and (max-width: 768px) {
   .header .mobile-nav li.menu-item-has-children .dropdown-arrow {
@@ -1767,7 +1781,7 @@ table {
 }
 .twocol .grid .tagline {
   font-size: calc(1.365rem + 2.15625vw);
-  letter-spacing: 5px;
+  letter-spacing: 7px;
   margin-bottom: 0;
 }
 @media (min-width: 768px) {
@@ -1846,6 +1860,7 @@ table {
 }
 .twocol .text-block {
   height: 100%;
+  padding: 20px;
 }
 .twocol .text-block .content {
   max-width: 85%;
@@ -1854,6 +1869,9 @@ table {
   .twocol .text-block .content {
     max-width: none;
   }
+}
+.twocol .text-block .content p {
+  letter-spacing: 1px;
 }
 @media only screen and (max-width: 768px) {
   .twocol .text-block {
@@ -1903,7 +1921,6 @@ table {
 .twocol .accent {
   display: flex;
   align-items: center;
-  width: 18%;
   font-size: 1.8rem;
   gap: 0.75rem;
 }
@@ -1937,6 +1954,13 @@ table {
   .twocol .team-grid p {
     font-size: 1.6rem;
   }
+}
+
+.studio h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 400;
 }
 
 section.Press .entry-content {
@@ -2333,6 +2357,10 @@ body.home .header-left a {
   transition: all 0.5s ease;
   color: #222324;
 }
+.project-grid-item .hover-content .label {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
 
 /* For archive and single project grid */
 .project-image {
@@ -2418,6 +2446,14 @@ body.home .header-left a {
 }
 .single-project .project-info h1 {
   letter-spacing: 0.2rem;
+}
+
+/* Hide filters on all projects page */
+.page-template-archive-projects .filters {
+  display: none;
+}
+.page-template-archive-projects.hashed .filters {
+  display: flex;
 }
 
 /*--------------------------------------------------------------

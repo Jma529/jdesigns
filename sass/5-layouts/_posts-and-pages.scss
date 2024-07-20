@@ -57,7 +57,7 @@
 
 		.tagline {
 			@include font-size(2.4rem);
-			letter-spacing: 5px;
+			letter-spacing: 7px;
 			margin-bottom: 0;
 		}
 
@@ -141,12 +141,17 @@
 
 		.text-block {
 			height: 100%;
+			padding: 20px;
 			
 			.content {
 				max-width: 85%;
 
 				@include breakpoint(xl) {
 					max-width: none;
+				}
+
+				p {
+					letter-spacing: 1px;
 				}
 				
 			}
@@ -210,7 +215,6 @@
 	.accent {
 			display: flex;
 			align-items: center;
-			width: 18%;
 			font-size: 1.8rem;
 			gap: .75rem;
 
@@ -242,6 +246,15 @@
 				font-family: $font__sans;
 				@include font-size(1.6rem);
 			}
+		}
+	}
+
+	.studio {
+		h2 {
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			font-weight: 400;
 		}
 	}
 

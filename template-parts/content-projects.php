@@ -29,6 +29,9 @@
         $image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
         $link = get_permalink();
         $categories = get_the_category();
+        $coming_soon = (get_field('coming_soon'));
+        $main_link = get_field('main_project_link');
+        $location = get_field('location');
 
         if ( ! empty( $categories ) ) {
           foreach ( $categories as $cat ) {
@@ -36,16 +39,34 @@
           }
         }
 ?>
-        
-      <a href="<?php echo $link; ?>" class="project-grid-item <?php the_ID(); ?> project-<?= $count; ?> <?= $cats; ?>">
-        <article>
+<!--  
+          <article>
           <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
           <div class="hover-content">
             <h3 class="name h2"><?php the_title(); ?></h3>
+            <p>Coming soon</p>
+          </div>
+        </article> -->
+
+    
+
+      <a href="<?= get_field('main_project_link') ? '/project/' . $main_link : $link; ?>" class="project-grid-item <?php the_ID(); ?> project-<?= $count; ?> <?= $cats; ?>">
+        <article>
+          <div class="project-image" style="background-image: url('<?php echo $image ?>');"></div>
+          <div class="hover-content">
+            <h3 class="name h2 no-margin"><?php the_title(); ?></h3>
+            <?php if($location) : ?>
+            <p class="text-cap"><?php echo $location ?></p>
+            <?php endif; ?>
+            <?php if($coming_soon): ?>
+              <p class="label">Coming soon</p>
+              <?php else: ?>
             <button class="button">View Project</button>
+            <?php endif; ?>
           </div>
         </article>
       </a>
+      
 
       <?php endwhile; wp_reset_postdata(); ?>
   </div>

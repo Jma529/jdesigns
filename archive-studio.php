@@ -26,26 +26,18 @@ get_header();
 <main class="studio twocol">
   <section class="padding">
     <div class="wrapper">
+    <?php the_content(); ?>
       <div class="grid">
         <div class="item-1 row-1">
           <div class="team-image" style="background-image: url('<?php echo $image ?>');"></div>
-          <!-- <div class="contact-info">
-            <a href="emailto<?php echo $email; ?>"><?php echo $email; ?></a>
-            <a href="tel:<?php echo $tel; ?>"><?php echo $tel; ?></a>
-          <div class="location">
-            <?php echo $location_1 ?>
-          </div>
-          <div class="location">
-            <?php echo $location_2 ?>
-          </div> -->
         </div>
         <div class="item-2 row-1">
           <div class="text-block bg-dark">
             <div class="accent">
               <div class="line-small"></div>
-              <p class="tagline">STUDIO</p>
+              <p class="tagline">THE STUDIO</p>
             </div>
-            <div class="content"><?php the_content(); ?></div>
+            <div class="content"> <?= get_field('studio_bio'); ?></div>
           </div>
         </div>
         <div class="item-3 row-2">

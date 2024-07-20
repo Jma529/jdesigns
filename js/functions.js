@@ -3,11 +3,13 @@ jQuery(document).ready(function () {
   // Slick Slider, single slide automatic
 
   $(".front-page-slider").slick({
-    autoplay: false,
+    autoplay: true,
     slidesToScroll: 1,
     infinite: true,
-    prevArrow: '<i class="fas fa-chevron-left"></i>',
-    nextArrow: '<i class="fas fa-chevron-right"></i>',
+    prevArrow: false,
+    nextArrow: false,
+    autoplaySpeed: 5000,
+    pauseOnHover: false,
   });
 
   // Masonry
@@ -52,19 +54,33 @@ function onHashchange() {
   // filter isotope
   $grid.isotope({
     itemSelector: '.project-grid-item',
-    filter: hashFilter
+    filter: hashFilter,
+    percentPosition: true,
+    
+    masonry: {
+      columnWidth: ".grid-sizer",
+      gutter: ".gutter-sizer",
+    }
   });
 
   // set selected class on button
   if ( hashFilter ) {
     $filters.find('.is-checked').removeClass('is-checked');
     $filters.find('[data-filter="' + hashFilter + '"]').addClass('is-checked');
+    
   }
+  if (window.location.hash) {
+    $('body').addClass('hashed');
+}
 }
 
 $(window).on( 'hashchange', onHashchange );
 // trigger event handler to init Isotope
 onHashchange();
+
+// if ($('body').hasClass(hashFilter)) {
+//   $filters.addClass('show');
+// }
 
 // Remove empty p tags
 
@@ -75,6 +91,8 @@ $('p:empty').remove();
 $('.main-menu-mobile .dropdown-arrow').click(function() {
   $('.sub-menu').toggleClass('active');
   $('.dropdown-arrow').toggleClass('rotate');
-  console.log('I work!');
 });
+
+3
+
 

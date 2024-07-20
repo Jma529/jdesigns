@@ -1,5 +1,5 @@
 //=============================================================================================================
-// Headings
+// General
 //=============================================================================================================
 
 h1, .h1 {
@@ -46,6 +46,9 @@ h3, .h3 {
   margin: 0 0 20px 0;
 }
 
+.label {
+  letter-spacing: 10%;
+}
 
 //=============================================================================================================
 // General typography
@@ -64,7 +67,7 @@ textarea {
 }
 
 p {
-  @include font-size(1.8rem);
+  @include font-size(1.6rem);
 	margin-bottom: 1.5rem;
 }
 
@@ -125,7 +128,7 @@ ins {
 }
 
 .text-cap {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 nav {
@@ -160,4 +163,16 @@ p {
 
 strong, .bold {
   font-weight: 800;
+}
+
+.lspace-sm {
+  letter-spacing: 2px !important;
+}
+
+.lspace-md {
+  letter-spacing: 4px !important;
+}
+
+.lspace-lg {
+  letter-spacing: 6px !important;
 }

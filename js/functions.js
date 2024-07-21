@@ -88,7 +88,7 @@ $('p:empty').remove();
 
 // Open mobile menu 
 
-$('.main-menu-mobile .dropdown-arrow').click(function() {
+$('.menu-item-has-children').click(function() {
   $('.sub-menu').toggleClass('active');
   $('.dropdown-arrow').toggleClass('rotate');
 });

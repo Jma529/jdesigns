@@ -2259,6 +2259,12 @@ body.home .header-left a {
   padding: 15px 0;
   justify-content: center;
 }
+@media only screen and (max-width: 768px) {
+  .section-projects .filters {
+    flex-direction: column;
+    padding: 20px;
+  }
+}
 .section-projects .filters .button {
   letter-spacing: 4px;
 }

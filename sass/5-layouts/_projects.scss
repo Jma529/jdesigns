@@ -9,6 +9,11 @@
     padding: 15px 0;
     justify-content: center;
 
+    @include breakpoint(sm) {
+      flex-direction: column;
+      padding: 20px;
+    }
+
     .button {
       letter-spacing: 4px;
 
@@ -25,7 +30,7 @@
     letter-spacing: 4px;
     margin-top: 20px;
     text-align: center;
-    
+
     &.show {
       display: block;
     }

@@ -11,15 +11,25 @@
 
     .button {
       letter-spacing: 4px;
+
       &.is-checked {
         background-color: $color__text-accent;
         color: white;
         border-color: $color__text-accent;
       }
     }
-
   }
-  
+  .coming-soon {
+    display: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-top: 20px;
+    text-align: center;
+    
+    &.show {
+      display: block;
+    }
+  }
 }
 
 

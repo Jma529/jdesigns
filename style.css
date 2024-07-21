@@ -2267,6 +2267,16 @@ body.home .header-left a {
   color: white;
   border-color: #830715;
 }
+.section-projects .coming-soon {
+  display: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 20px;
+  text-align: center;
+}
+.section-projects .coming-soon.show {
+  display: block;
+}
 
 .project-grid {
   display: grid;

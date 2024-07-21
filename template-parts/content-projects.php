@@ -15,11 +15,13 @@
 
   <section class="section-projects">
     <div class="filters">
-      <button class="button is-checked" data-filter="*">All</button>
-      <button class="button" data-filter=".residential">Residential</button>
-      <button class="button" data-filter=".commercial">Commercial</button>
+      <button class="all button is-checked" data-filter="*">All</button>
+      <button class="residential button" data-filter=".residential">Residential</button>
+      <button class="commercial button" data-filter=".commercial">Commercial</button>
+      <button class="hospitality button" data-filter=".hospitality">Hospitality</button>
       <!-- <button class="button" data-filter=".hospitality">Hospitality</button> -->
     </div>
+    <h2 class="coming-soon">Coming soon</h2>
     <div class="project-grid">
     <div class="grid-sizer"></div> 
     <div class="gutter-sizer"></div>
